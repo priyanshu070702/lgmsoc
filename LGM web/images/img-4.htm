@@ -1,0 +1,3054 @@
+<!DOCTYPE html> 
+<html data-ng-app="myapp">
+ 
+<head><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"4262ecdced",applicationID:"211426920"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.awfis.com/inspiration/practices-better-project-management-skills"
+        },
+        "headline": "Practices That Could Better Your Project Management Skills - Awfis",
+        "description": "Practices That Could Better Your Project Management Skills - Awfis",
+        "image": "https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg",  
+        "author": {
+            "@type": "Person",
+            "name": "Awfis Editorial"
+        },  
+        "publisher": {
+            "@type": "Organization",
+            "name": "Awfis",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.awfis.com/images/logo_black.png",
+            "width": 180,
+            "height": 60
+            }
+        },
+        "datePublished": "2017-07-07",
+        "dateModified": "July 12, 2017"
+        }
+        </script>
+    
+   
+    <!-- ?> -->
+<title>Practices That Could Better Your Project Management Skills - Awfis</title>
+<meta name='robots' content='max-image-preview:large' />
+
+<!-- This site is optimized with the Yoast SEO plugin v7.0.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://www.awfis.com/inspiration/practices-better-project-management-skills" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Practices That Could Better Your Project Management Skills - Awfis" />
+<meta property="og:description" content="When approached with the right mindset and skills, it can be quite challenging and exciting to manage a project. Read on to know what you possess and what you might need for successful project planning &amp; execution." />
+<meta property="og:url" content="https://www.awfis.com/inspiration/practices-better-project-management-skills" />
+<meta property="og:site_name" content="Awfis" />
+<meta property="article:tag" content="Business How To" />
+<meta property="article:tag" content="entrepreneurship" />
+<meta property="article:tag" content="Management Skills" />
+<meta property="article:tag" content="Project Management" />
+<meta property="article:tag" content="Start-Ups" />
+<meta property="article:tag" content="Time Management" />
+<meta property="article:section" content="Business How To’s" />
+<meta property="article:published_time" content="2017-07-07T13:38:34+05:30" />
+<meta property="article:modified_time" content="2017-07-12T15:44:58+05:30" />
+<meta property="og:updated_time" content="2017-07-12T15:44:58+05:30" />
+<meta property="og:image" content="https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg" />
+<meta property="og:image:secure_url" content="https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg" />
+<meta property="og:image:width" content="905" />
+<meta property="og:image:height" content="543" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="When approached with the right mindset and skills, it can be quite challenging and exciting to manage a project. Read on to know what you possess and what you might need for successful project planning &amp; execution." />
+<meta name="twitter:title" content="Practices That Could Better Your Project Management Skills - Awfis" />
+<meta name="twitter:image" content="https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//www.awfis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Awfis &raquo; Feed" href="https://www.awfis.com/inspiration/feed" />
+<link rel="alternate" type="application/rss+xml" title="Awfis &raquo; Comments Feed" href="https://www.awfis.com/inspiration/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="Awfis &raquo; Practices That Could Better Your Project Management Skills Comments Feed" href="https://www.awfis.com/inspiration/practices-better-project-management-skills/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.awfis.com\/inspiration\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://www.awfis.com/inspiration/wp-includes/css/dist/block-library/style.min.css?ver=5.8' type='text/css' media='all' />
+<link rel='stylesheet' id='twentythirteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic%7CBitter%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://www.awfis.com/inspiration/wp-content/themes/awfis/genericons/genericons.css?ver=3.03' type='text/css' media='all' />
+<link rel='stylesheet' id='twentythirteen-style-css'  href='https://www.awfis.com/inspiration/wp-content/themes/awfis/style.css?ver=2013-07-18' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentythirteen-ie-css'  href='https://www.awfis.com/inspiration/wp-content/themes/awfis/css/ie.css?ver=2013-07-18' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='ecs-styles-css'  href='https://www.awfis.com/inspiration/wp-content/plugins/ele-custom-skin/assets/css/ecs-style.css?ver=3.1.2' type='text/css' media='all' />
+<!--n2css--><script type='text/javascript' src='https://www.awfis.com/inspiration/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.awfis.com/inspiration/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='ecs_ajax_load-js-extra'>
+/* <![CDATA[ */
+var ecs_ajax_params = {"ajaxurl":"https:\/\/www.awfis.com\/inspiration\/wp-admin\/admin-ajax.php","posts":"{\"page\":0,\"name\":\"practices-better-project-management-skills\",\"error\":\"\",\"m\":\"\",\"p\":0,\"post_parent\":\"\",\"subpost\":\"\",\"subpost_id\":\"\",\"attachment\":\"\",\"attachment_id\":0,\"pagename\":\"\",\"page_id\":0,\"second\":\"\",\"minute\":\"\",\"hour\":\"\",\"day\":0,\"monthnum\":0,\"year\":0,\"w\":0,\"category_name\":\"\",\"tag\":\"\",\"cat\":\"\",\"tag_id\":\"\",\"author\":\"\",\"author_name\":\"\",\"feed\":\"\",\"tb\":\"\",\"paged\":0,\"meta_key\":\"\",\"meta_value\":\"\",\"preview\":\"\",\"s\":\"\",\"sentence\":\"\",\"title\":\"\",\"fields\":\"\",\"menu_order\":\"\",\"embed\":\"\",\"category__in\":[],\"category__not_in\":[],\"category__and\":[],\"post__in\":[],\"post__not_in\":[],\"post_name__in\":[],\"tag__in\":[],\"tag__not_in\":[],\"tag__and\":[],\"tag_slug__in\":[],\"tag_slug__and\":[],\"post_parent__in\":[],\"post_parent__not_in\":[],\"author__in\":[],\"author__not_in\":[],\"post_type\":[\"post\",\"page\",\"e-landing-page\"],\"ignore_sticky_posts\":false,\"suppress_filters\":false,\"cache_results\":true,\"update_post_term_cache\":true,\"lazy_load_term_meta\":true,\"update_post_meta_cache\":true,\"posts_per_page\":10,\"nopaging\":false,\"comments_per_page\":\"50\",\"no_found_rows\":false,\"order\":\"DESC\"}"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.awfis.com/inspiration/wp-content/plugins/ele-custom-skin/assets/js/ecs_ajax_pagination.js?ver=3.1.2' id='ecs_ajax_load-js'></script>
+<script type='text/javascript' src='https://www.awfis.com/inspiration/wp-content/plugins/ele-custom-skin/assets/js/ecs.js?ver=3.1.2' id='ecs-script-js'></script>
+<link rel="https://api.w.org/" href="https://www.awfis.com/inspiration/wp-json/" /><link rel="alternate" type="application/json" href="https://www.awfis.com/inspiration/wp-json/wp/v2/posts/3087" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.awfis.com/inspiration/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.awfis.com/inspiration/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='https://www.awfis.com/inspiration/?p=3087' />
+<link rel="alternate" type="application/json+oembed" href="https://www.awfis.com/inspiration/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.awfis.com%2Finspiration%2Fpractices-better-project-management-skills" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.awfis.com/inspiration/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.awfis.com%2Finspiration%2Fpractices-better-project-management-skills&#038;format=xml" />
+	<style type="text/css" id="twentythirteen-header-css">
+			.site-header {
+			background: url(https://www.awfis.com/inspiration/wp-content/themes/awfis/images/headers/circle.png) no-repeat scroll top;
+			background-size: 1600px auto;
+		}
+		@media (max-width: 767px) {
+			.site-header {
+				background-size: 768px auto;
+			}
+		}
+		@media (max-width: 359px) {
+			.site-header {
+				background-size: 360px auto;
+			}
+		}
+		</style>
+			<style type="text/css" id="wp-custom-css">
+			@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gotham/Gotham-Medium.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Gotham-Extra';
+    src: url('../fonts/gotham/Gotham-ExtraLight.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Gotham-Light';
+    src: url('../fonts/gotham/Gotham-Light.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('../fonts/gotham/Gotham-Bold.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'Gotham-Book';
+    src: url('../fonts/gotham/Gotham-Book.woff2') format('woff2'),
+        url('../fonts/gotham/Gotham-Book.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'helvetica_condensedregular';
+    src: url('../fonts/helvetica/helvetica_condensed-webfont.woff2') format('woff2'),
+         url('../fonts/helvetica/helvetica_condensed-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+h1.entry-title {
+    display: none;
+}
+
+em {
+    color: #888888;
+}
+
+h5 {
+    font-size: 24px!important;
+    padding-top: 15px!important;
+    line-height: 32px!important;
+	  color: #58595b!important;
+	  margin-bottom: 0px!important;
+	font-family: "Gotham-Medium", Sans-serif!important;
+}
+
+.elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 1250px;
+}
+
+@media only screen and (max-width: 600px) {
+ h5 {
+    font-size: 20px!important;
+    padding-top: 15px!important;
+    line-height: 30px!important;
+	  color: #636262!important;
+}
+}
+
+@media only screen and (max-width: 600px) {
+ .elementor-widget-theme-post-content p {
+   font-size:16px!important;
+}
+}
+
+.elementor-6499 .elementor-element.elementor-element-47155b8 .elementor-heading-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+}
+
+.elementor-6499 .elementor-element.elementor-element-06133c2 .elementor-heading-title {
+     display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+}
+
+.elementor-6490 .elementor-element.elementor-element-e3485ab .elementor-heading-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-4fcef2d7.elementor-section-full_width.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default {
+	margin-top:106px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-4fcef2d7.elementor-section-full_width.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 10px 0px!important;
+	  padding-top: 0px !important;
+}
+
+.elementor-element.elementor-element-5772be38.experttitle.elementor-widget.elementor-widget-heading h2 {
+   color: #000000;
+    font-family: 'Gotham'!important;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 26px;
+    letter-spacing: 0.56px;
+    text-decoration: none;
+}
+
+.elementor-element.elementor-element-4ad59883.expert.subtitle.elementor-widget.elementor-widget-heading h2 {
+    color: #888888;
+    font-family: 'Gotham-Light'!important;
+    font-weight: normal;
+    letter-spacing: 0.56px;
+    margin-top: -6px;
+    font-size: 17px;
+    margin-bottom: -10px;
+}
+
+.elementor-element.elementor-element-4be188b7.elementor-icon-list--layout-inline.expertname.elementor-list-item-link-full_width.elementor-widget.elementor-widget-icon-list ul li {
+    font-family: 'Gotham-Light'!important;
+    font-size: 16px!important;
+    font-weight: normal;
+    letter-spacing: 0.56px;
+    color: #888888;
+    margin-top: 0px;
+}
+
+.elementor-element.elementor-element-6212f993.Bannersubcontent.elementor-widget.elementor-widget-text-editor {
+    text-align: center;
+    color: #58595B;
+    font-weight: normal;
+    line-height: 1.6em!important;
+    letter-spacing: 0.56px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    line-height: 26px;
+    font-family: 'Gotham'!important;
+    font-size: 18px;
+	 padding: 0px 100px;
+}
+
+@media(max-width:600px){
+	.elementor-element.elementor-element-6212f993.Bannersubcontent.elementor-widget.elementor-widget-text-editor {
+    text-align: center;
+    color: #58595B;
+    font-weight: normal;
+    line-height: 1.6em!important;
+    letter-spacing: 0.56px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    line-height: 26px;
+    font-family: 'Gotham'!important;
+    font-size: 18px;
+	 padding: 0px 0px;
+}
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-19900f21.Expert.Box.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    margin-left: 10px;
+    margin-right: 10px;
+	  margin-bottom: 40px;
+}
+
+.elementor-6532 .elementor-element.elementor-element-52edeaa4 > .elementor-element-populated {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    padding: 50px 45px 50px 45px!important;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-22d5322c.elementor-section-full_width.elementor-hidden-phone.elementor-section-height-default.elementor-section-height-default {
+    margin-top: 106px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-22d5322c.elementor-section-full_width.elementor-hidden-phone.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 10px 0px!important;
+	  padding-top: 0px !important;
+}
+
+.elementor-element.elementor-element-7c65f173.elementor-icon-list--layout-inline.elementor-align-center.workspacelist.elementor-list-item-link-full_width.elementor-widget.elementor-widget-icon-list ul li a {
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 0.56px;
+    color: #6D6D6D!important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Gotham'!important;
+}
+
+.elementor-element.elementor-element-7c65f173.elementor-icon-list--layout-inline.elementor-align-center.workspacelist.elementor-list-item-link-full_width.elementor-widget.elementor-widget-icon-list ul li a :hover {
+    border-bottom: 1px solid rgb(238,49,36)!important;
+}
+
+.elementor-icon-list-items .elementor-icon-list-item .elementor-icon-list-text {
+    display: inline-block;
+    border-bottom: 1px solid transparent!important;
+}
+
+a:focus, a:hover {
+color: transparent;
+text-decoration: underline;
+}
+.elementor-element.elementor-element-6c6c1471.workspacehead.elementor-widget.elementor-widget-heading h2 {
+    color: #555555;
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 0.56px;
+    text-align: center;
+    margin-bottom: 18px;
+    font-family: 'Gotham'!important;
+}
+
+.elementor-element.elementor-element-3ecb56c.WETitile.elementor-widget.elementor-widget-theme-post-title.elementor-page-title.elementor-widget-heading h1 {
+    color: #000000;
+    font-family: 'Gotham'!important;
+    font-size: 17px;
+    font-weight: normal;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+}
+
+.elementor-element.elementor-element-7d8de99.WESub.elementor-widget.elementor-widget-heading h2 {
+   color: #888888;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    margin-top: -5px;
+    margin-bottom: -10px;
+    font-family: 'Gotham-Light';
+}
+
+.elementor-element.elementor-element-ec28d59.Name.elementor-icon-list--layout-traditional.elementor-list-item-link-full_width.elementor-widget.elementor-widget-icon-list ul li {
+    font-family: 'Gotham-Light'!important;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.56px;
+    color: #888888;
+    padding: 0px 20px;
+    line-height: 22px;
+    margin-top: 0px;
+}
+
+div#Ecatebtn h2 {
+    color: #666666;
+    font-family: 'Gotham'!important;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.56px;
+    margin-left: 20px;
+    border: 1px solid rgb(238,49,36);
+    width: 115px;
+    text-align: center;
+    padding: 5px 6px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-09534a5.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    background-color: #f4f4f4;
+    margin: 10px 15px;
+    height: 630px;
+	  margin-bottom: 40px;
+}
+
+@media(max-width:600px){
+	section.elementor-section.elementor-top-section.elementor-element.elementor-element-09534a5.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    background-color: #f4f4f4;
+    margin: 10px 15px;
+    height: 550px;
+	  margin-bottom: 40px;
+}
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-09534a5.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 0px!important;
+}
+
+.elementor-element.elementor-element-492e43e.WTTitile.elementor-widget.elementor-widget-theme-post-title.elementor-page-title.elementor-widget-heading h1 {
+    color: #000000;
+    font-family: "Gotham-Medium", Sans-serif;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.4em;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+}
+
+.elementor-element.elementor-element-0cb4152.WTSub.elementor-widget.elementor-widget-heading h2 {
+    color: #888888;
+    font-family: "Gotham-ExtraLight", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    margin-top: -11px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    margin: 5px 0px;
+}
+
+div#WTcatbtn h2 {
+    color: #666666;
+    font-family: "Gotham-Medium", Sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.56px;
+    margin-left: 20px;
+    border: 1px solid rgb(238,49,36);
+    width: 110px;
+    text-align: center;
+    padding: 5px 6px;
+    margin-top: 0px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-bb24898.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    background-color: #f4f4f4;
+    margin: 10px 10px;
+    height: 455px;
+		margin-bottom:40px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-bb24898.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 0px!important;
+}
+
+.elementor-element.elementor-element-f767967.WLTitile.elementor-widget.elementor-widget-theme-post-title.elementor-page-title.elementor-widget-heading h1 {
+    color: #000000;
+    font-family: 'Gotham'!important;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.4em;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+}
+
+.elementor-element.elementor-element-126f000.WLSub.elementor-widget.elementor-widget-heading h2 {
+    color: #888888;
+    font-family: 'Gotham-Light'!important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    margin-top: -11px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    margin: 5px 0px;
+}
+
+div#WLcatbtn h2 {
+    color: #666666;
+   font-family: 'Gotham'!important;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.56px;
+    margin-left: 20px;
+    border: 1px solid rgb(238,49,36);
+    width: 150px;
+    text-align: center;
+    padding: 5px 6px;
+    margin-top: 0px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-4650570.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    background-color: #f4f4f4;
+    margin: 10px 10px;
+	  height: 520px;
+	  margin-top: -30px;
+}
+
+@media(max-width:600px){
+	section.elementor-section.elementor-top-section.elementor-element.elementor-element-4650570.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    background-color: #f4f4f4;
+    margin: 10px 10px;
+	  height: 500px;
+	  margin-top: 15px;
+}
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-4650570.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 0px!important;
+}
+
+footer.entry-meta {
+    display: none;
+}
+
+
+.workspacelist li.elementor-icon-list-item.elementor-inline-item:first-child:after {
+content: "";
+height: 45% !important;
+top: 22% !important;
+	border-left:2px solid #6D6D6D!important;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-63786015.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default {
+    margin-top: 106px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-63786015.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 0px;
+}
+
+.elementor-element.elementor-element-40d1979e.Bannertext.elementor-widget.elementor-widget-text-editor {
+    text-align: left;
+    color: #6B6C6E;
+    font-family: 'Gotham-Light'!important;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.56px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.elementor-element.elementor-element-21e0aa35.Leaderloopimage.elementor-widget.elementor-widget-theme-post-featured-image.elementor-widget-image img {
+    border-radius: 20px;
+}
+
+.elementor-column.elementor-col-50.elementor-top-column.elementor-element.elementor-element-16c080e3.Leaderimagebox {
+    width: 32%;
+}
+
+.elementor-element.elementor-element-488e229e.Leaderheading.elementor-widget.elementor-widget-theme-post-title.elementor-page-title.elementor-widget-heading h1 {
+    color: #000000;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 30px;
+    text-decoration: none;
+    margin-bottom: -10px;
+    font-family: 'Gotham'!important;
+}
+
+.elementor-column.elementor-col-50.elementor-top-column.elementor-element.elementor-element-5c417c67.Leadercontentbox {
+    width: 66%;
+    margin: 0% 1%;
+}
+
+.elementor-element.elementor-element-170cd646.Leadericonlist.elementor-icon-list--layout-traditional.elementor-list-item-link-full_width.elementor-widget.elementor-widget-icon-list ul li {
+    font-family: 'Gotham-Light';
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.56px;
+    line-height: 39px;
+    color: #888888;
+}
+
+.elementor-element.elementor-element-65606e0c.Leadertext.elementor-widget.elementor-widget-text-editor {
+    text-align: justify;
+    color: #888888;
+    font-family: 'Gotham-Light'!important;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0.56px;
+    margin-top: -10px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-196a7d1c.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    margin-bottom: 20px;
+}
+
+span.elementor-icon-list-icon {
+    color: #000;
+    font-size: 26px;
+}
+
+@media(max-width:600px){
+	section.elementor-section.elementor-top-section.elementor-element.elementor-element-63786015.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default {
+    margin-top: 74px;
+		
+}
+	.elementor-column.elementor-col-50.elementor-top-column.elementor-element.elementor-element-16c080e3.Leaderimagebox {
+    width: 100%;
+}
+	
+	.elementor-column.elementor-col-50.elementor-top-column.elementor-element.elementor-element-5c417c67.Leadercontentbox {
+    width: 100%;
+    margin: 1% 0%;
+}
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-7980bbee.elementor-section-full_width.elementor-hidden-phone.elementor-section-height-default.elementor-section-height-default {
+    margin-top: 106px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-7980bbee.elementor-section-full_width.elementor-hidden-phone.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 10px 0px!important;
+	  padding-top: 0px !important;
+}
+
+.elementor-element.elementor-element-6bcfa87a.TBannertext.elementor-widget.elementor-widget-text-editor {
+    text-align: center;
+    color: #5B5C5E;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 30px;
+    letter-spacing: 0.56px;
+    font-family: 'Gotham';
+    padding: 0px 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-13fd998b.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    background-color: #f4f4f4;
+    margin: 15px 15px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-13fd998b.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 0px; 
+}
+
+.elementor-element.elementor-element-748abcc3.elementor-widget.elementor-widget-heading h2 {
+    color: #000000;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 30px;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    font-family: 'Gotham';
+}
+
+.elementor-element.elementor-element-1f25360d.elementor-widget.elementor-widget-heading h2 {
+    color: #888888;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 30px;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    font-family: 'Gotham-Light';
+    padding-bottom: 25px;
+}
+
+.elementor-element.elementor-element-45276735.Thoughtheading.elementor-widget.elementor-widget-heading h2 {
+    color: #000000;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 30px;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    font-family: 'Gotham'!important;
+}
+
+.elementor-element.elementor-element-21119160.ThoughtSub.elementor-widget.elementor-widget-heading h2 {
+    color: #888888;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 30px;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    font-family: 'Gotham-Light'!important;
+	padding-bottom: 20px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-4b02e930.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    background-color: #f4f4f4;
+    margin: 15px 15px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-4b02e930.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+     padding: 0px!important;
+	  
+}
+
+.workspacelist li.elementor-icon-list-item.elementor-inline-item:nth-child(2):after {
+    content: "";
+    height: 45% !important;
+    top: 22% !important;
+    border-left: 2px solid #6D6D6D!important;
+}
+
+p.thoughtdetailtext {
+    display: flex;
+    align-items: baseline;
+}
+
+i.fa.fa-star {
+    color: #ef2929;
+    padding-right: 15px;
+}
+
+h3.thoughtdetailheadin {
+    text-align: center;
+    font-size: 36px;
+}
+
+.elementor-element.elementor-element-46621c83.elementor-widget.elementor-widget-heading h2 {
+    color: #000000;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 24px;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    font-family: 'Gotham'!important;
+}
+
+.elementor-element.elementor-element-497defe6.elementor-widget.elementor-widget-heading h2 {
+    color: #888888;
+    font-size: 17px;
+    font-weight: normal;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    font-family: 'Gotham-Light'!important;
+    margin-bottom: -10px;
+}
+
+.elementor-element.elementor-element-51da450b.elementor-icon-list--layout-inline.elementor-list-item-link-full_width.elementor-widget.elementor-widget-icon-list ul li {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    color: #888888;
+    font-family: 'Gotham-Light'!important;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-7b9d2b02.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+    background-color: #f4f4f4;
+    margin: 15px 15px;
+	  height: 590px;
+	  margin-bottom:15px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-7b9d2b02.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 0px!important;
+}
+
+.elementor-element.elementor-element-043c8cc.Bottomtext.elementor-widget.elementor-widget-heading h2 {
+    font-family: 'Gotham';
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: -20px;
+}
+
+div#Ecatebtn, div#WLcatbtn {
+    position: absolute!important;
+    bottom: 20px!important;
+}
+
+
+
+.elementor-container.elementor-column-gap-default {
+    height: 100%!important;
+}
+
+.elementor-widget-wrap.elementor-element-populated {
+    display: initial !important;
+}
+
+.col-md-12{
+	float:left!important;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-48a4a98.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default {
+    margin-top: 96px!important;
+}
+
+@media(max-width:600px){
+	section.elementor-section.elementor-top-section.elementor-element.elementor-element-48a4a98.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default {
+    margin-top: 65px!important;
+		display:none!important;
+}
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-5d0ae8b.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default {
+   display:none;
+}
+
+@media(max-width:600px){
+	section.elementor-section.elementor-top-section.elementor-element.elementor-element-5d0ae8b.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default {
+    margin-top: 65px;
+		display:block;
+}
+}
+
+span.report-star {
+    color: #ef3f1e;
+    font-size: 26px;
+    font-weight: 700;
+	  padding-right: 10px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-f7f1d24.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default {
+    margin-top: 96px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-f7f1d24.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 0px!important;
+}
+
+.elementor-element.elementor-element-7906c96.elementor-widget.elementor-widget-text-editor {
+    color: #555555;
+    text-align: center;
+    font-family: 'Gotham';
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-5c8b8cb.elementor-section-full_width.reportloop.elementor-section-height-default.elementor-section-height-default {
+    background-color: #f4f4f4;
+    margin: 10px 15px;
+    height: 590px;
+    margin-bottom: 40px;
+}
+
+section.elementor-section.elementor-top-section.elementor-element.elementor-element-5c8b8cb.elementor-section-full_width.reportloop.elementor-section-height-default.elementor-section-height-default .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 0px!important;
+}
+
+.elementor-element.elementor-element-9a24944.Reportloophead.elementor-widget.elementor-widget-theme-post-title.elementor-page-title.elementor-widget-heading h1 {
+    color: #000000;
+    font-family: 'Gotham'!important;
+    font-size: 17px;
+    font-weight: normal;
+    padding: 0px 20px;
+    line-height: 26px;
+}
+
+.elementor-element.elementor-element-9918cd5.reportloopshort.elementor-widget.elementor-widget-text-editor {
+    color: #888888;
+    font-family: 'Gotham-Light'!important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+    margin-top: -11px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 3;
+    margin: 5px 0px;
+}
+
+
+.elementor-element.elementor-element-984b468.reportloopdate.elementor-widget.elementor-widget-post-info ul li {
+    color: #888888;
+    font-family: 'Gotham-Light'!important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.56px;
+    padding: 0px 20px;
+}
+
+@media(max-width:600px){
+	section.elementor-section.elementor-top-section.elementor-element.elementor-element-f7f1d24.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default {
+    margin-top: 74px;
+}
+	
+	.elementor-element.elementor-element-7906c96.elementor-widget.elementor-widget-text-editor {
+    color: #555555;
+    text-align: center;
+    font-family: 'Gotham';
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+	
+	section.elementor-section.elementor-top-section.elementor-element.elementor-element-5c8b8cb.elementor-section-full_width.reportloop.elementor-section-height-default.elementor-section-height-default {
+    background-color: #f4f4f4;
+    margin: 10px 15px;
+    height: 550px;
+    margin-bottom: 20px;
+}
+}
+
+h4.reportkeyheading {
+    font-size: 22px;
+    font-family: 'GothamMedium';
+    margin-top: 30px;
+}
+
+
+@media(max-width:600px){
+	.elementor-8348 .elementor-element.elementor-element-51b71fe {
+    margin-top: 19%;
+    margin-bottom: 0%;
+}
+	
+	.elementor-8348 .elementor-element.elementor-element-3f541bd .elementor-heading-title {
+    color: #6B6C6E;
+    font-family: "GothamMedium", Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+}		</style>
+		   
+<link rel="stylesheet"   href="https://www.awfis.com/css/minified.1627974327.css"> 
+ <!-- Google Tag Manager -->
+<!-- End Google Tag Manager -->
+<!-- Google Tag Manager -->
+<script async>
+setTimeout(function(){ (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58WK3F'); }, 4000);</script>
+<!-- End Google Tag Manager -->
+
+
+
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="keywords" content="coworking space,office space for rent,virtual office,commercial space for rent,shared office space,coworking office space">
+<meta name="theme-color" content="#f5582d">
+
+
+<!-- social -->
+ 
+<meta name="format-detection" content="telephone=no">
+
+<link rel="canonical" href="https://www.awfis.com/inspiration/practices-better-project-management-skills">
+
+<link rel="preload" href="https://www.awfis.com/css/_owl.1555065196.scss" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://www.awfis.com/css/_owl.1555065196.scss"></noscript>
+
+
+
+<link href="/images/favicon.png" rel="icon" sizes="32x32" />
+<link rel="preload" as="script" href="https://www.awfis.com/js/minfied.min.1555065199.js"/>
+<link rel="preload" as="script" href="https://www.awfis.com/js/angular-allminified.1571140461.js" />
+<link rel="preload" as="font" href="/fonts/sfui/SFUIDisplay-Semibold.woff" type="font/woff" crossorigin />
+<link rel="preload" as="font" href="/fonts/sfui/SFUIDisplay-Regular.woff2" type="font/woff2" crossorigin />
+<link rel="preload" as="font" href="/fonts/sfui/SFUIDisplay-Light.woff2" type="font/woff2" crossorigin />
+<link rel="preload" as="font" href="/fonts/sfui/SFUIDisplay-Semibold.woff2" type="font/woff2" crossorigin />
+<link rel="preload" as="font" href="/fonts/sfui/SFUIDisplay-Thin.woff2" type="font/woff2" crossorigin />
+<link rel="preload" as="font" href="/fonts/sfui/SFUIDisplay-Medium.woff2" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preload" as="image" href="/images/home-banner.jpg"/>
+<script>
+    var BaseUrl = 'https://www.awfis.com';
+    var ApiUrl = 'https://www.awfis.com';</script>
+<div ng-class="{
+            'height-100':isSearch}">
+    <script src="https://www.awfis.com/js/minfied.min.1555065199.js"></script>
+    <script src="https://www.awfis.com/js/choosen.1571140461.js"></script>
+    <script src="https://www.awfis.com/js/angular-allminified.1571140461.js" ></script>       
+
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak, 
+        .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+</head>
+
+<body class="loader ng-cloak" ng-controller="CommonController" id="bodyapp" ng-cloak>
+<!-- Google Tag Manager (noscript) -->
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58WK3F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <header id="beforeLogin" style="display: block;" >
+        <nav class="navbar custom-nav">
+            <div class="custom-container">
+                <div class="d-lg-flex c-align">
+                    <div class="navbar-header">
+                        <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse"
+                                id="navbar" type="button">
+                            <span class="sr-only">
+                                Toggle navigation
+                            </span>
+                            <span class="icon-bar">
+                            </span>
+                            <span class="icon-bar">
+                            </span>
+                            <span class="icon-bar">
+                            </span>
+                        </button>
+                        <a target="_parent"  id="site-logo" class="navbar-brand" href="https://www.awfis.com">
+                                                            <img alt="Logo" src="https://www.awfis.com/images/logo_black.png">
+                                
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 0px;">
+                        <ul class="nav navbar-nav navbar-right ">
+                            <li class="hide-768">
+                                <a id="request-a-visit" class="popup-button request" target="_parent" href="https://www.awfis.com#banner-form"  >
+                                    Request a visit
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a id="location" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Locations
+                                    <b class="caretopmenu"></b>
+                                </a>
+                                <ul class="dropdown-menu arrowmenu collapsed menuScroll">
+                                    <li>
+                                        <a id="new-delhi" href="https://www.awfis.com/office-space/new-delhi" 
+                                        target="_parent">Coworking space in Delhi</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/gurgaon" target="_parent" >Coworking space in Gurgaon</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/noida" target="_parent" >Coworking space in Noida</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/mumbai" target="_parent" >Coworking space in Mumbai</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/bengaluru" target="_parent" >
+                                            Coworking space in Bengaluru
+                                        </a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/hyderabad" target="_parent" >Coworking space in Hyderabad</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/kolkata" target="_parent" >Coworking space in Kolkata</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/chennai" target="_parent" >Coworking space in Chennai</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/pune" target="_parent" >Coworking space in Pune</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="chandigarh" href="https://www.awfis.com/office-space/chandigarh" target="_parent" >Coworking space in Chandigarh</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="ahmedabad" href="https://www.awfis.com/office-space/ahmedabad" target="_parent" >Coworking space in Ahmedabad</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="indore" href="https://www.awfis.com/office-space/indore" target="_parent" >Coworking Space in Indore</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a id="book-space-header" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Book Space
+                                    <b class="caretopmenu"></b>
+                                </a>
+                                <ul class="dropdown-menu arrowmenu collapsed">
+                                    <li>
+                                        <a id="cabins" href="https://www.awfis.com/office-space/allcity/alllocation/cabin" "
+                                        target="_parent">Cabins</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="meeting-rooms" href="https://www.awfis.com/office-space/allcity/alllocation/meeting/" target="_parent" >Meeting Rooms</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="flexible-seats" href="https://www.awfis.com/office-space/allcity/alllocation/flexi"
+                                        target="_parent" >Flexible Seats</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="fixed-seats" href="https://www.awfis.com/office-space/allcity/alllocation/fixed"
+                                        target="_parent" >Fixed Seats</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="virtual-offices" href="https://www.awfis.com/remote-working" target="_parent">Virtual Offices</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a href="/awfis-now" target="_parent" id="bulk-meeting-after-login" >Meet Now</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="national-pass" href="https://www.awfis.com/remote-working" target="_parent" >Virtual Office Plus</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="awfis-roaming" href="https://www.awfis.com/awfis-now" target="_parent" >Work Now</a>
+                                        <span class="newlabel">NEW</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li aria-expanded="false">
+                                <a id="enterprise" href="https://www.awfis.com/enterprise" target="_parent" >Enterprise</a>
+                            </li>
+                           
+
+                            <!-- <li aria-expanded="false">
+                                <a id="mobility-solutions" href="https://www.awfis.com/remote-working" target="_parent" >
+                                        Remote Working
+                                </a>
+                            </li> -->
+                            <!-- <li aria-expanded="false" data-target="#bs-example-navbar-collapse-2">
+                                <a href="https://www.awfis.com/awfis-care" target="_parent" id="awfis-care" >
+                                Awfis Care
+                                </a>
+                            </li> -->
+                            <li class="dropdown">
+                                <a id="book-space-header" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">AWFIS PRODUCTS
+                                    <b class="caretopmenu"></b>
+                                </a>
+                                <ul class="dropdown-menu arrowmenu collapsed">
+                                    <li>
+                                        <a id="cabins" href="https://www.awfis.com/awfis-now" target="_parent">Awfis Now</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="meeting-rooms" href="https://www.awfis.com/awfis-care" target="_parent" >Awfis Care</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="awfis-gold" href="https://www.awfis.com/awfis-gold" target="_parent" >Awfis Gold</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                    <li>
+                                        <a id="flexible-seats" href="https://www.awfis.com/remote-working" target="_parent" >Remote Working</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li aria-expanded="false">
+                            <!-- <li aria-expanded="false">
+                                <a id="find-inspiration" href="https://www.awfis.com/inspiration" target="_parent" >
+                                    Find Inspiration
+                                </a>
+                            </li> -->
+                            <!-- <li aria-expanded="false">
+                                <a class="login" id="toprewards" onclick="showLogin();" href="javascript:void(0);" >
+                                    Rewards
+                                </a>
+                            </li> -->
+                            <!-- <li class="hidden-xs">
+                                <a>
+                                    |
+                                </a>
+                            </li> -->
+                            <li>
+                                <a href="/inspiration/workplace-insights" target="_parent" >
+                                Workplace Insights
+                                </a>
+                            </li>
+                            <li aria-expanded="false">
+                                <a id="awfis@home" href="https://shop.awfis.com?utm_source=awfis_website&utm_medium=link&utm_campaign=header" target="_blank" >
+                                        Awfis Shop
+                                </a>
+                            </li>
+                            <li class="hidden-xs">
+                                <a>
+                                    |
+                                </a>
+                            </li>
+                            
+                            <li class="mpadtop0">
+                                <ul class="sign-login collapsed">
+                                    <li>
+                                        <a class="login" id="top-login" href="javascript:void(0);" onclick="showLogin();">
+                                            Log in
+                                        </a>
+                                    </li>
+                                    <li class="hidden-sm hidden-md hidden-lg ">
+                                        <a>
+                                            |
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" id="top-signup" onclick="openSignupPopup();">
+                                            Sign up
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div> 
+                </div>
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="float: right;">
+                        <a id="request-a-visit" class="popup-button request  newBtn-request" target="_parent" href="https://www.awfis.com#banner-form"  >
+                                    Request a visit
+                        </a>
+                        <a class="call-btn" 
+                            style="
+                                text-decoration: none !important;
+                                color:black;    
+                                text-decoration: none !important;
+                                font-family: sfui-semi-bold;
+                                font-size: 16px;
+                                display: inline-block; 
+                                line-height: 1;
+                                border-radius: 3px;
+                                transition: .5s;
+                                -webkit-transition: .5s;" 
+                            href="tel:18002586633">
+                            <strong>Book a Tour   </strong>
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <strong>  1860 258 6633</strong>
+                    </a>
+                    <a class="awfisbtn-header" style="padding:0px;padding-left:10px;" tabindex="-1" id="download-app" onclick="downloadReqlink();" href="javascript:void(0);">
+                        Download App
+                    </a>
+                </div>  
+            </div            
+        </nav>    
+    </header>
+    <header id="afterLogin" style="display:none;">
+        <nav class="navbar custom-nav">
+            <div class="custom-container">
+                <div class="d-lg-flex c-align">
+                    <div class="navbar-header">
+                        <button id="toggle-nav" aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-2"
+                                data-toggle="collapse" type="button">
+                            <span class="sr-only">
+                                Toggle navigation
+                            </span>
+                            <span class="icon-bar">
+                            </span>
+                            <span class="icon-bar">
+                            </span>
+                            <span class="icon-bar">
+                            </span>
+                        </button>
+                    <a class="navbar-brand" href="/" target="_parent" id="site-logo-after-login" >
+                        <img alt="logo" src="https://www.awfis.com/images/logo_black.png">
+                    </a>                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" aria-expanded="false">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li aria-expanded="false" data-target="#bs-example-navbar-collapse-2" data-toggle="collapse" class="collapsed hide-768">
+                                <a class="popup-button request" target="_parent" id="request-a-visit-mob" href="https://www.awfis.com#banner-form"   >
+                                    Request a visit
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a id="location" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Locations
+                                    <b class="caretopmenu"></b>
+                                </a>
+                                <ul class="dropdown-menu arrowmenu collapsed menuScroll">
+                                    <li>
+                                        <a id="new-delhi" href="https://www.awfis.com/office-space/new-delhi" 
+                                        target="_parent">Coworking space in Delhi</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/gurgaon" target="_parent" >Coworking space in Gurgaon</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/noida" target="_parent" >Coworking space in Noida</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/mumbai" target="_parent" >Coworking space in Mumbai</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/bengaluru" target="_parent" >Coworking space in Bengaluru</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/hyderabad" target="_parent" >Coworking space in Hyderabad</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/kolkata" target="_parent" >Coworking space in Kolkata</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/chennai" target="_parent" >Coworking space in chennai</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="bangalore" href="https://www.awfis.com/office-space/pune" target="_parent" >Coworking space in Pune</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="chandigarh" href="https://www.awfis.com/office-space/chandigarh" target="_parent" >Coworking space in Chandigarh</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="ahmedabad" href="https://www.awfis.com/office-space/ahmedabad" target="_parent" >Coworking space in Ahmedabad</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="indore" href="https://www.awfis.com/office-space/indore" target="_parent" >Coworking Space in Indore</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" target="_parent" id="book-space-after-login" class="dropdown-toggle" data-toggle="dropdown">Book Space
+                                    <b class="caretopmenu"></b>
+                                </a>
+                                <ul class="dropdown-menu arrowmenu">
+                                    <li data-toggle="collapse" aria-expanded="false" data-target="#bs-example-navbar-collapse-2" class="collapsed">
+                                        <a href="/office-space/allcity/alllocation/cabin" id="cabins-after-login" target="_parent"
+                                        >Cabins</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li data-toggle="collapse" aria-expanded="false" data-target="#bs-example-navbar-collapse-2" class="collapsed">
+                                        <a href="/office-space/allcity/alllocation/meeting/" target="_parent" id="meeting-rooms-after-login" >Meeting Rooms</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li data-toggle="collapse" aria-expanded="false" data-target="#bs-example-navbar-collapse-2" class="collapsed">
+                                        <a href="/office-space/allcity/alllocation/flexi" target="_parent" id="flexible-seats-after-login"
+                                        >Flexible Seats</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li data-toggle="collapse" aria-expanded="false" data-target="#bs-example-navbar-collapse-2" class="collapsed">
+                                        <a href="/office-space/allcity/alllocation/fixed-desk" target="_parent" id="fixed-seats-after-login"
+                                        >Fixed Seats</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li data-toggle="collapse" aria-expanded="false" data-target="#bs-example-navbar-collapse-2" class="collapsed">
+                                        <a href="/remote-working" target="_parent" id="virtual-offices-after-login" >Virtual Offices</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+
+                                    <li aria-expanded="false" data-target="#bs-example-navbar-collapse-2">
+                                        <a href="/awfis-now" target="_parent" id="bulk-meeting-after-login" >Meet Now</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li data-toggle="collapse" aria-expanded="false" data-target="#bs-example-navbar-collapse-2" class="collapsed">
+                                        <a href="/remote-working" target="_parent" id="national-pass-after-login" >Virtual Office Plus</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li data-toggle="collapse" aria-expanded="false" data-target="#bs-example-navbar-collapse-2" class="collapsed">
+                                        <a href="/awfis-now" target="_parent" id="awfis-roaming-after-login" >Work Now</a>
+                                        <span class="newlabel">NEW</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li aria-expanded="false">
+                                <a  href="/enterprise" target="_parent" >Enterprise</a>
+                            </li>
+                            
+                            <!-- <li aria-expanded="false" data-target="#bs-example-navbar-collapse-2">
+                                <a href="https://www.awfis.com/remote-working" target="_parent" id="mobility-solutions-after-login" >
+                                    Remote Working
+                                </a>
+                            </li> -->
+                            <!-- <li aria-expanded="false" data-target="#bs-example-navbar-collapse-2">
+                                <a href="https://www.awfis.com/awfis-care" target="_parent" id="awfis-care" >
+                                Awfis Care
+                                </a>
+                            </li> -->
+                            <li class="dropdown">
+                                <a id="book-space-header" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">AWFIS PRODUCTS
+                                    <b class="caretopmenu"></b>
+                                </a>
+                                <ul class="dropdown-menu arrowmenu collapsed">
+                                    <li>
+                                        <a id="cabins" href="https://www.awfis.com/awfis-now" target="_parent">Awfis Now</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="meeting-rooms" href="https://www.awfis.com/awfis-care" target="_parent" >Awfis Care</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="awfis-gold" href="https://www.awfis.com/awfis-gold" target="_parent" >Awfis Gold</a>
+                                    </li>
+                                    <li class="dividertopmenu"></li>
+                                    <li>
+                                        <a id="flexible-seats" href="https://www.awfis.com/remote-working" target="_parent" >Remote Working</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li aria-expanded="false" data-target="#bs-example-navbar-collapse-2">
+                            <!-- <li aria-expanded="false" data-target="#bs-example-navbar-collapse-2">
+                                <a href="https://www.awfis.com/inspiration" target="_parent" id="find-inspiration-after-login" >
+                                    Find Inspiration
+                                </a>
+                            </li> -->
+                            <!-- <li aria-expanded="false" data-target="#bs-example-navbar-collapse-2">
+                                <a href="https://www.awfis.com/offers" target="_parent" id="rewards-after-login" >
+                                    Rewards
+                                </a>
+                            </li> -->
+                            <li>
+                                <a href="/inspiration/workplace-insights" target="_parent" >
+                                        Workplace Insights
+                                </a>
+                            </li>
+                            <li aria-expanded="false">
+                                <!-- <form ng-if="redirectToken!=undefined" action="https://store.awfis.com/customer/account/loginPost?utm_source=awfis_website&utm_medium=link&utm_campaign=header" method="POST" target="_blank" style="min-width:auto">
+                                    <input name="token" type="hidden" value="{{redirectToken}}"> 
+                                    <button class="awfisbtn-header "name="Submit" type="submit">
+                                        Awfis@home
+                                    </button>
+                                </form> -->
+                                
+                                <a id="awfis@home" href="https://shop.awfis.com?utm_source=awfis_website&utm_medium=link&utm_campaign=header" target="_blank" >
+                                    Awfis Shop
+                                </a>
+                            </li>
+                            <li class="hidden-xs">
+                                <a>
+                                    |
+                                </a>
+                            </li>
+                           
+                           
+                            <li>
+                                <ul class="sign-login">
+                                    <li style="display:none;">
+                                        <div class="dropdown ">
+                                            <button class="sprite notification dropdown-toggle" data-toggle="dropdown" type="button">
+                                                <span class="redDot">
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu userNotification">
+                                                <li class="upArrow">
+                                                </li>
+                                                <li>
+                                                    <h4>
+                                                        Your booking has been confirmed
+                                                    </h4>
+                                                    <h5 class="color-lightgrey">
+                                                        Now
+                                                    </h5>
+                                                </li>
+                                                <li>
+                                                    <h4>
+                                                        Meeting credits has been refilled
+                                                    </h4>
+                                                    <h5 class="color-lightgrey">
+                                                        2 hrs ago
+                                                    </h5>
+                                                </li>
+                                                <li>
+                                                    <h4>
+                                                        Meeting credits has been refilled
+                                                    </h4>
+                                                    <h5 class="color-lightgrey">
+                                                        Yesterday
+                                                    </h5>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li style="display:none;">
+                                        <!--<a href=""><span class="sprite cart"></span></a>-->
+                                        <div class="dropdown ">
+                                            <button class="sprite cart dropdown-toggle" data-toggle="dropdown" type="button">
+                                            </button> 
+                                            <ul class="dropdown-menu userCart">
+                                                <li class="upArrow">
+                                                </li>
+                                                <li>
+                                                    <figure class="clearfix">
+                                                        <img alt="4 Seater conference rooms" class="pull-left" src="/images/image.jpg">
+                                                        <figcaption class="pull-left">
+                                                            <h4>
+                                                                4 Seater conference rooms
+                                                            </h4>
+                                                            <h5 class="color-lightgrey">
+                                                                Koramangala, Bengaluru
+                                                            </h5>
+                                                            <img alt="remove" class="removeFromList" src="/images/close.png">
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                                <li>
+                                                    <figure class="clearfix">
+                                                        <img alt="4 Seater conference rooms" class="pull-left" src="/images/image.jpg">
+                                                        <figcaption class="pull-left">
+                                                            <h4>
+                                                                4 Seater conference rooms
+                                                            </h4>
+                                                            <h5 class="color-lightgrey">
+                                                                Koramangala, Bengaluru
+                                                            </h5>
+                                                            <img alt="Close" class="removeFromList" src="/images/close.png">
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                                <li class="bookNow">
+                                                    <a href="listing.html" id="book-now-top">
+                                                        <h4>
+                                                            Book Now
+                                                        </h4>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown circle ">
+                                            <button class="sprite user dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">
+                                            </button>
+                                            <ul class="dropdown-menu userInfoMenu" data-toggle="collapse" aria-expanded="false" data-target="#bs-example-navbar-collapse-2">
+                                                <li class="upArrow">
+                                                </li>
+                                                <li class="clearfix">
+                                                    <h4 class="pull-left" id="usertitle">demo user</h4>
+                                                </li>
+                                                <li class="hoverActive" data-toggle="collapse" aria-expanded="true">
+                                                    <a id="menu-dashboard" href="javascript:void(0);" onclick="window.location.href = 'user/dashboard';">
+                                                        Dashboard
+                                                    </a>
+                                                </li>
+                                                <li class="hoverActive" data-toggle="collapse" aria-expanded="true">
+                                                    <a id="menu-profile" href="javascript:void(0)" onclick="window.location.href = 'user/profile';">
+                                                        Profile
+                                                    </a>
+                                                </li>
+                                                <li class="hoverActive">
+                                                    <a id="menu-logout" href="javascript:void(0);" onclick="$('#logmeout').click()">
+                                                        Logout
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>                    
+                    </div> 
+                </div>
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-3" aria-expanded="false" style="float: right;">
+                    <a class="popup-button request newBtn-request" target="_parent" id="request-a-visit-mob" href="https://www.awfis.com#banner-form"   >
+                                    Request a visit
+                    </a>
+                    <a id="book-a-tour" 
+                        style="text-decoration: none !important;
+                                color:black;    
+                                text-decoration: none !important;
+                                font-family: sfui-semi-bold;
+                                font-size: 16px;
+                                display: inline-block;
+                                line-height: 1;
+                                border-radius: 3px;
+                                transition: .5s;
+                                -webkit-transition: .5s;" 
+                        href="tel:18002586633">
+                        <strong>Book a Tour   </strong>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <strong>  1860 258 6633</strong>
+                    </a>
+                   
+                    <a class="awfisbtn-header" style="padding:0px;padding-left:10px;" href="javascript:void(0);" onclick="downloadReqlink();" id="download-after-login">
+                        Download App
+                    </a>
+                </div>    
+            </div>
+        </nav>
+    </header> 
+    <style>
+        .goldlogo{
+            width: 160px;
+            margin-top: 5px;
+        }
+
+        @media(max-width:600px){
+            .goldlogo{
+            width: 160px;
+            margin-top: 0px;
+        }
+        }
+    </style>
+ <div class="col-md-12 nopad" style="padding:0;"><link rel="stylesheet" href="https://www.awfis.com/inspiration/wp-content/themes/awfis/css/_blog-inner.scss">
+
+
+
+
+
+<div class="padding-t-84 ng-scope blog-inner BlogPost" id="heading1" data-title="Practices That Could Better Your Project Management Skills" data-url="https://www.awfis.com/inspiration/practices-better-project-management-skills" rel="https://www.awfis.com/?p=3087">
+    <img alt="Practices That Could Better Your Project Management Skills" class="full-width" src="https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg"> 
+    <section class="section-padding blue-bg">
+        <div class="container margin-t-minus-200">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="photo-card" id="main-content">
+                        <div class="content-hold">
+                            <p class="category">
+                                <a href="https://www.awfis.com/inspiration/business-how-tos" target="_blank">Business How To’s</a>
+                            </p>
+                            <p class="posted">                                
+                            07 July 2017                            </p>
+                            <h2 class="blog-title">Practices That Could Better Your Project Management Skills</h2>
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-xs-8">
+                                    <ul class="auth-ul">
+                                        <li class="pic">
+                                            <img alt="" class="img-responive" src="https://secure.gravatar.com/avatar/f6f8b9841f66f91c6be56d6ca30b5795?s=96&d=mm&r=g">
+                                        </li>
+                                        <li class="ng-binding">
+                                            <span>
+                                                Posted by
+                                            </span>
+                                            Awfis Editorial                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="">                                          
+                                        <ul class="social-links right-align">
+                                            <li>
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.awfis.com/inspiration/practices-better-project-management-skills" target="_blank">
+                                                    <img alt="Share on Facebook" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/fb-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://twitter.com/intent/tweet?url=https://www.awfis.com/inspiration/practices-better-project-management-skills&original_referer=https://www.awfis.com/inspiration/practices-better-project-management-skills" target="_blank">
+                                                    <img alt="Share on Twitter" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/twitter-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.linkedin.com/shareArticle?url=https://www.awfis.com/inspiration/practices-better-project-management-skills" target="_blank">
+                                                    <img alt="Share on Linkedin" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/linkedin-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://plus.google.com/share?url=https://www.awfis.com/inspiration/practices-better-project-management-skills" target="_blank">
+                                                    <img alt="Share on Google" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/google-share.jpg">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-hold blog-content">
+                            <p>One day you’re a rookie, straight out of college and all of a sudden, you find yourself handling responsibilities and tasks on your own.</p>
+<p>Becoming an executive is great, but it is a serious role that requires you to be fully prepared. Fully prepared, how? If you’re qualified to do the job you’ll obviously do it well, right?</p>
+<p>Wrong.</p>
+<p>There is more, so much more, to managing a team and successfully executing a project. Here are 5 project management skills that will help you to sail through projects that much more easily.</p>
+<p><strong>#1 Prioritizing Tasks</strong></p>
+<p>There will always be some other task (or more) vying for your attention. You need to understand what needs to be prioritized and completed first. Remember, you are not putting off work, but are scheduling tasks so everything gets done without you or your team scrambling between multiple tasks at the same time, giving each project its due time and effort.</p>
+<p>Learn to make proper to-do lists, or better still, put your smartphone and work computer to good use.For instance, Mac loyalists can opt for a mobile app like SnoozeMaster for setting reminders for impending tasks that need to be completed within a wide span of time, ranging from a couple of minutes to as long as several months. Android users too are not left behind in terms of tech tools that enhance their project management skills with apps such as Calendar Master (in the image below). They enable professionals to activate a wide range of customized snooze options depending on the software service being used for the reminders.</p>
+<p><center></p>
+<figure id="attachment_3088" aria-describedby="caption-attachment-3088" style="width: 606px" class="wp-caption aligncenter"><img loading="lazy" class="wp-image-3088 size-full" src="https://www.https://www.awfis.com/inspiration/wp-content/uploads/2016/06/shutterstock_3835072871.jpg.com/wp-content/uploads/2017/07/image-1-.png" alt="Practices That Could Better Your Project Management Skills" width="606" height="406" srcset="https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184219/image-1-.png 606w, https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184219/image-1--500x335.png 500w" sizes="(max-width: 606px) 100vw, 606px" /><figcaption id="caption-attachment-3088" class="wp-caption-text">Image Courtesy: <a href="http://www.novell.com/coolsolutions/img/17424-2a.jpg" rel="nofollow">Novell</a></figcaption></figure>
+<p></center><strong>#2 Project Management = People Management</strong></p>
+<p>When you choose the right people, it is like getting half the task done already. They already possess the skills and acumen to accomplish the project goals.</p>
+<p>However, also remember that when you put together a team, it is not just for the professional skills that they bring to the table. Are they all compatible? Do they share the same goals, overall? If there are conflicts, being able to handle them efficiently is also a hallmark of a successful executive.</p>
+<p><strong>#3 Try And Test</strong></p>
+<p>Learn, if you wish, from your previous experiences and case studies, but you must also understand that there is no ‘one size fits all’ solution. There are many factors at play and each project must be handled according to its individual requirement, whether it is the client, the end-user, the market, the working team or even the top management’s say.</p>
+<p>Innovate and be willing to try new things rather than force-fit a previously worked solution onto the current project.</p>
+<p><strong>#4 Time Management Skills</strong></p>
+<p>If you let it run, a project can run forever. Or it can refuse to stick to your expected timelines. You are the leader and you must anticipate and plan for each phase, backtracking every detail from the expected time of delivery to the day you start the project.</p>
+<p>Try and plan well in advance what are the key elements of the project, if possible allot the most time to them and work your way down to the less important elements.</p>
+<p><strong>#5 Making The Most of Technology</strong></p>
+<p>Even though we have a dedicated team and each one has a role to play to ensure that the project gets completed on time and the desired results are achieved, it pays to have a little help if not assistance from technology.</p>
+<p>We all are already slaves to technology, but in the professional world, it helps to have technology at your beck and call.The tech world is filled with project management tools like Trello, Wrike, and Evernote, to name just a few, that can help you mark your progress and keep you in check if you are faltering.</p>
+<p><center></p>
+<figure id="attachment_3090" aria-describedby="caption-attachment-3090" style="width: 606px" class="wp-caption aligncenter"><img loading="lazy" class="size-full wp-image-3090" src="https://www.https://www.awfis.com/inspiration/wp-content/uploads/2016/06/shutterstock_3835072871.jpg.com/wp-content/uploads/2017/07/image-2-.png" alt="Practices That Could Better Your Project Management Skills" width="606" height="430" srcset="https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07185530/image-2-.png 606w, https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07185530/image-2--500x355.png 500w" sizes="(max-width: 606px) 100vw, 606px" /><figcaption id="caption-attachment-3090" class="wp-caption-text">Image Courtesy: <a href="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/bb311e4d3417ac027a5e4545146389e7/usecases-board02.jpg">Trello</a></figcaption></figure>
+<p></center></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs">
+                    <aside class="blog-read" style="position: static;">
+                        <div class="photo-card popular-post">
+                            <div class="content-hold">
+                                <h3>
+                                    You can also read
+                                </h3>
+                            </div>
+                            <div id="blog-sections">
+                            
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+    .hide-from-bots{
+        display: none;
+    }
+    </style>
+</div>
+
+
+
+
+
+
+<div class="padding-t-84 ng-scope blog-inner BlogPost hide-from-bots" data-title="7 Types Of Colleagues Found In Every Successful Organization" id="heading2" data-url="https://www.awfis.com/inspiration/7-types-of-colleagues-found-in-every-successful-organization-2" rel="http://sukirti.pandey">
+    <img alt="7 Types Of Colleagues Found In Every Successful Organization" class="full-width" src="https://s3-ap-south-1.amazonaws.com/uploaddocumentstomakeitpublic/wp-content/uploads/2016/07/25142521/7_types_of_colleagues_found_in_every_successful_organization_1.jpg">
+    <section class="section-padding blue-bg">
+        <div class="container margin-t-minus-200">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="photo-card" id="main-content">
+                        <div class="content-hold">
+                            <p class="category">
+                                <a href="https://www.awfis.com/inspiration/business-how-tos" target="_blank" class="ng-binding">Business How To’s</a>
+                            </p>
+                            <p class="posted">                                
+                            25 August 2021                            </p>
+                            <h2 class="blog-title">7 Types Of Colleagues Found In Every Successful Organization</h2>
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-xs-8">
+                                    <ul class="auth-ul">
+                                        <li class="pic">
+                                            <img alt="" class="img-responive" src="https://secure.gravatar.com/avatar/7d1b7d833803c096d9b755d3eca78044?s=96&d=mm&r=g">
+                                        </li>
+                                        <li class="ng-binding">
+                                            <span>
+                                                Posted by
+                                            </span>
+                                            awfis                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="">                                          
+                                        <ul class="social-links right-align">
+                                            <li>
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.awfis.com/inspiration/7-types-of-colleagues-found-in-every-successful-organization-2" target="_blank">
+                                                    <img alt="Share on Facebook" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/fb-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://twitter.com/intent/tweet?url=https://www.awfis.com/inspiration/7-types-of-colleagues-found-in-every-successful-organization-2&original_referer=https://www.awfis.com/inspiration/7-types-of-colleagues-found-in-every-successful-organization-2" target="_blank">
+                                                    <img alt="Share on Twitter" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/twitter-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.linkedin.com/shareArticle?url=https://www.awfis.com/inspiration/7-types-of-colleagues-found-in-every-successful-organization-2" target="_blank">
+                                                    <img alt="Share on Linkedin" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/linkedin-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://plus.google.com/share?url=https://www.awfis.com/inspiration/7-types-of-colleagues-found-in-every-successful-organization-2" target="_blank">
+                                                    <img alt="Share on Google" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/google-share.jpg">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-hold blog-content">
+                            <p>A dynamic enterprise usually thrives on a cocktail full of spunky personalities. Each brings in their unique talents and habits that fit like perfect pieces in a puzzle. From the sassy boss to the clingy colleague, here&#8217;s some types that you are bound to bump into&#8230;</p>
+<p><a href="https://s3-ap-southeast-1.amazonaws.com/images.space.https://www.awfis.com/inspiration/wp-content/uploads/2016/06/shutterstock_3835072871.jpg.com/wp-content/uploads/2016/07/05171308/7_types_of_colleagues_found_in_every_successful_organization.png"><img loading="lazy" class="aligncenter wp-image-23098" src="https://s3-ap-southeast-1.amazonaws.com/images.space.https://www.awfis.com/inspiration/wp-content/uploads/2016/06/shutterstock_3835072871.jpg.com/wp-content/uploads/2016/07/05171308/7_types_of_colleagues_found_in_every_successful_organization.png" alt="7_types_of_colleagues_found_in_every_successful_organization" width="500" height="500" /></a><br />
+<strong>1. The compulsive foodie(s)</strong></p>
+<p>Instead of clients, this one’s got all the city’s restaurants on speed dial. From Domino’s to the latest hotspot in town, their peckish appetite will ensure that there’s plenty food circulating all around office. Whether, you’ve got random board meetings or your team’s working at odd hours &#8211; you’ll never be hungry ever.</p>
+<p><strong>2. The witty assassin </strong></p>
+<p>This one will ‘slay’ you more lethally than Beyonce or Eminem ever will.  Come hell or sunshine, he or she’s got the perfect comeback for every painful person and situation. Known for having their fair share of haters, they’re also true entertainers. But, it’ll do you good to remember that it’s a war of words that’s not worth playing….</p>
+<p><strong>3. The jack-of-all trades</strong></p>
+<p>From sweet talking to https://www.https://www.awfis.com/inspiration/wp-content/uploads/2016/06/shutterstock_3835072871.jpg.com/inspiration/wp-content/uploads/2016/03/Awfis-is-your-new-Office1.jpg to executing any kind of project – you name it &amp; it is done.  This breed seldom takes no for an answer.  Whatever is touched turns to gold and they will leave you wondering how it got done. If you need a helping hand, an insightful shrink, or someone to walk your dog, rest assured you can depend on this pro multi-tasker with your eyes shut!</p>
+<p><strong>4. The road runner </strong></p>
+<p>This famous few will be on their toes, always on the phone, pretending to be busier than the Kardashians.  Your’re more likely to see them at the office door as a permanent fixture. All the worlds’ people know this person and this social butterfly is likely to know everyone. Constantly on the move, you’ll need this PR pro to take your business to places.</p>
+<p><strong>5. The tech geek</strong></p>
+<p>You’ll always find this genius, behind a bunch of wires, computers and applications. Broke a light bulb, had a short-circuit or you found your desktop suddenly crashed… Fret not. Dexter’s got the perfect fix. Quiet and demure, he probably takes pride in being faster than a normal computer. But, if you’re a know-it-all, then you might not like this mister…</p>
+<p><strong>6. The swear champion </strong></p>
+<p>This person believes in pure tough love. Yeah, ouch! When the pressure builds up and clients turn demanding, then be sure to hear a spew of gushing swears. Whether it’s loud and clear or below the belt, this one is feared and they sure know how to get work done. Tip: They are usually in positions of power and you’d rather never cross the line with them</p>
+<p><strong>7. The constant complainer</strong></p>
+<p>This one’s a problem magnet. Even on the brightest day where there’s plenty of reason to rejoice, this type loves telecasting their worries. This includes the coffee machine, that might have broken down or the weather that suddenly turned rotten – there’s always something to say. However, their minute observation constantly keeps you in check and hey! Be assured that you’ll get plenty feedback for the tiniest things on agenda.</p>
+<p>But whether you like it or not… take each of these types with a pinch of salt, because they make for the big brains and even bigger learning curves…</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs">
+                    <aside class="blog-read" style="position: static;">
+                        <div class="photo-card popular-post">
+                            <div class="content-hold">
+                                <h3>
+                                    You can also read
+                                </h3>
+                            </div>
+                            <div id="blog-sections">
+                            
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+
+
+
+
+
+
+<div class="padding-t-84 ng-scope blog-inner BlogPost hide-from-bots" data-title="Things Every Entrepreneur Can Learn From Pursuit of Happyness" id="heading3" data-url="https://www.awfis.com/inspiration/things-entrepreneur-can-learn-pursuit-of-happyness-2" rel="http://sukirti.pandey">
+    <img alt="Things Every Entrepreneur Can Learn From Pursuit of Happyness" class="full-width" src="https://s3-ap-south-1.amazonaws.com/uploaddocumentstomakeitpublic/wp-content/uploads/2016/05/25142523/the-pursuit-of-happy-ness.jpg">
+    <section class="section-padding blue-bg">
+        <div class="container margin-t-minus-200">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="photo-card" id="main-content">
+                        <div class="content-hold">
+                            <p class="category">
+                                <a href="https://www.awfis.com/inspiration/business-how-tos" target="_blank" class="ng-binding">Business How To’s</a>
+                            </p>
+                            <p class="posted">                                
+                            25 August 2021                            </p>
+                            <h2 class="blog-title">Things Every Entrepreneur Can Learn From Pursuit of Happyness</h2>
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-xs-8">
+                                    <ul class="auth-ul">
+                                        <li class="pic">
+                                            <img alt="" class="img-responive" src="https://secure.gravatar.com/avatar/7d1b7d833803c096d9b755d3eca78044?s=96&d=mm&r=g">
+                                        </li>
+                                        <li class="ng-binding">
+                                            <span>
+                                                Posted by
+                                            </span>
+                                            awfis                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="">                                          
+                                        <ul class="social-links right-align">
+                                            <li>
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.awfis.com/inspiration/things-entrepreneur-can-learn-pursuit-of-happyness-2" target="_blank">
+                                                    <img alt="Share on Facebook" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/fb-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://twitter.com/intent/tweet?url=https://www.awfis.com/inspiration/things-entrepreneur-can-learn-pursuit-of-happyness-2&original_referer=https://www.awfis.com/inspiration/things-entrepreneur-can-learn-pursuit-of-happyness-2" target="_blank">
+                                                    <img alt="Share on Twitter" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/twitter-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.linkedin.com/shareArticle?url=https://www.awfis.com/inspiration/things-entrepreneur-can-learn-pursuit-of-happyness-2" target="_blank">
+                                                    <img alt="Share on Linkedin" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/linkedin-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://plus.google.com/share?url=https://www.awfis.com/inspiration/things-entrepreneur-can-learn-pursuit-of-happyness-2" target="_blank">
+                                                    <img alt="Share on Google" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/google-share.jpg">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-hold blog-content">
+                            <p>Pursuit of Happyness is an iconic movie which was released in 2006. It has been 10  years since it released, but never fails to inspire the viewer. It fills the person with a determination to fight for their dreams irrespective of the hindrances that come along.</p>
+<p>Based on a true story of Chris Gardner, a man who loses everything , but manages to get everything because of his perseverance. They show how Chris and his son battle a period of homelessness selling medical bone density scanners while being enrolled in an internship as a stock broker.</p>
+<p><a href="https://s3-ap-southeast-1.amazonaws.com/images.space.https://www.awfis.com/inspiration/wp-content/uploads/2016/06/shutterstock_3835072871.jpg.com/wp-content/uploads/2016/05/12175445/pursuit_of_happyness-poster.jpg"><img loading="lazy" class="aligncenter wp-image-12599" src="https://s3-ap-southeast-1.amazonaws.com/images.space.https://www.awfis.com/inspiration/wp-content/uploads/2016/06/shutterstock_3835072871.jpg.com/wp-content/uploads/2016/05/12175445/pursuit_of_happyness-poster-202x300.jpg" alt="pursuit_of_happyness poster" width="300" height="446" /></a></p>
+<p>Here are the important things that every entrepreneur can take from the movie:</p>
+<p><strong>1. Be ready for extreme hardships:<br />
+</strong></p>
+<p>We’ve seen in the movie that Chris Gardner goes through numerous hardships. Whether it comes to selling his bone density scanners or taking up an internship while managing to take care of his son and provide for him. He doesn’t lose his determination even when everything seems bleak. It’s important not to give up and go on and try to overcome the problems that we come across, daily.</p>
+<p><strong>2. Aim for the stars<br />
+</strong></p>
+<p>Always aim high! Believe in yourself and everything can be conquerable. Chris Gardner took a chance and went for an option of interning as a stockbroker where only one person at the end would be given a job! He took a chance when the odds were against him and proved that all you need is an opportunity to achieve things when you set your heart at it.</p>
+<p><strong>3. Put In all the effort</strong></p>
+<p>When you want to achieve something make sure you give your best shot. A half hearted attempted is a good as not giving it a try. Chris Gardner has many close calls, where anyone else would have given up. He even fixes a bone density scanner at the homeless shelter to make the ends meet.  He has proved that if one wants anything eagerly in life, they should work as if their life depends on it.</p>
+<p><strong>4. Never let anyone’s judgement cloud your decision</strong></p>
+<p>Do not forget to believe in yourself, even if everyone gives up on you. Your decisions should be made on the basis of your logic and intuition rather than someone else&#8217;s judgement. Chris does not give up on the internship even when his wife leaves him. Instead he gets even more determined to succeed. Listen to your heart and no one else&#8217;s opinion. Immerse yourself in your dream idea!</p>
+<p><strong>5. Never show signs of weakness</strong></p>
+<p>Always show your strengths. The moment you do that, everything will fall into place. Fear is the toxin, hope and belief is the antidote. Chris always greeted everyone on a positive note and did not even flinch when he has to shell out his last 5$ to pay for executives cab fare. Quick thinking and how you transform your weaknesses into strengths is what matters eventually.</p>
+<p>Chris Gardner’s remarkable achievements show that no matter how many obstacles you face, the rules for success are the same for everyone. If you follow the rules, no matter how difficult it gets, you will reap the reward of your own “Pursuit of Happyness.”</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs">
+                    <aside class="blog-read" style="position: static;">
+                        <div class="photo-card popular-post">
+                            <div class="content-hold">
+                                <h3>
+                                    You can also read
+                                </h3>
+                            </div>
+                            <div id="blog-sections">
+                            
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+
+
+
+
+
+
+<div class="padding-t-84 ng-scope blog-inner BlogPost hide-from-bots" data-title="5 Effective Strategies to Market Your Freelance Career" id="heading4" data-url="https://www.awfis.com/inspiration/5-effective-strategies-to-market-your-freelance-career-2" rel="http://sukirti.pandey">
+    <img alt="5 Effective Strategies to Market Your Freelance Career" class="full-width" src="https://s3-ap-south-1.amazonaws.com/uploaddocumentstomakeitpublic/wp-content/uploads/2016/03/25142523/Freelancer.jpg">
+    <section class="section-padding blue-bg">
+        <div class="container margin-t-minus-200">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="photo-card" id="main-content">
+                        <div class="content-hold">
+                            <p class="category">
+                                <a href="https://www.awfis.com/inspiration/business-how-tos" target="_blank" class="ng-binding">Business How To’s</a>
+                            </p>
+                            <p class="posted">                                
+                            25 August 2021                            </p>
+                            <h2 class="blog-title">5 Effective Strategies to Market Your Freelance Career</h2>
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-xs-8">
+                                    <ul class="auth-ul">
+                                        <li class="pic">
+                                            <img alt="" class="img-responive" src="https://secure.gravatar.com/avatar/7d1b7d833803c096d9b755d3eca78044?s=96&d=mm&r=g">
+                                        </li>
+                                        <li class="ng-binding">
+                                            <span>
+                                                Posted by
+                                            </span>
+                                            awfis                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="">                                          
+                                        <ul class="social-links right-align">
+                                            <li>
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.awfis.com/inspiration/5-effective-strategies-to-market-your-freelance-career-2" target="_blank">
+                                                    <img alt="Share on Facebook" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/fb-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://twitter.com/intent/tweet?url=https://www.awfis.com/inspiration/5-effective-strategies-to-market-your-freelance-career-2&original_referer=https://www.awfis.com/inspiration/5-effective-strategies-to-market-your-freelance-career-2" target="_blank">
+                                                    <img alt="Share on Twitter" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/twitter-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.linkedin.com/shareArticle?url=https://www.awfis.com/inspiration/5-effective-strategies-to-market-your-freelance-career-2" target="_blank">
+                                                    <img alt="Share on Linkedin" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/linkedin-share.jpg">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://plus.google.com/share?url=https://www.awfis.com/inspiration/5-effective-strategies-to-market-your-freelance-career-2" target="_blank">
+                                                    <img alt="Share on Google" src="https://www.awfis.com/inspiration/wp-content/themes/awfis/images/google-share.jpg">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-hold blog-content">
+                            <p>What&#8217;s better than doing the job that you love and getting paid for it? That&#8217;s the life of a freelancer. You get the best of both the worlds where you get to mix passion and profession together. Freelancing is no magic, you can either be an individual with your own website or a part of a team who has been taking up projects from various clients for over a period of time.</p>
+<p><a href="https://s3-ap-southeast-1.amazonaws.com/images.space.https://www.awfis.com/inspiration/wp-content/uploads/2016/06/shutterstock_3835072871.jpg.com/wp-content/uploads/2016/03/30131448/Freelancer.jpg"><img loading="lazy" class="aligncenter wp-image-7234 size-full" src="https://s3-ap-southeast-1.amazonaws.com/images.space.https://www.awfis.com/inspiration/wp-content/uploads/2016/06/shutterstock_3835072871.jpg.com/wp-content/uploads/2016/03/30131448/Freelancer.jpg" alt="Freelancer" width="620" height="388" /></a></p>
+<p>If you are a freelancer and are wondering about the next steps to make it successful, here are some strategies that we think will help you make it a long term career.</p>
+<ol>
+<li>Create a checklist of your deliverables:</li>
+</ol>
+<p>The first step to promote your freelance career is to list down your skill set in the order of strength. It can be writing, graphic designing, creating video content or anything else that you think is your forte. Once you have this list ready, your reality will be in front of your eyes. The strengths can eventually result into a niche market of your own, via freelancing.</p>
+<ol start="2">
+<li>Make sure your content reaches your target audience:</li>
+</ol>
+<p>In today&#8217;s world identifying your potential client, plays key while marketing for the freelancer. In order to ensure this, make sure that your content is shared on all the social media platforms. For example, if you have created a video make sure you maximize it on YouTube, Facebook, Twitter and other relevant social media platforms. With this you can increase the visibility of your content and influence them with your content.</p>
+<ol start="3">
+<li>Do not forget to focus on e-mail marketing:</li>
+</ol>
+<p>E-mails are the best way to reach the correct target audience. The click through rate might be less compared to other social media platforms but around 90% of the audience using e-mails check it daily. People sign up for various sites knowing that they would be receiving mails from that particular website. It is the easiest way to cover a large network area. If you are a little shy or lack the opportunity to connect with the right market, cold emailing will be the best way to reach out to your target.</p>
+<ol start="4">
+<li>Maintain your website traffic and Inquiry section efficiently:</li>
+</ol>
+<p>The easiest way for people to contact you is through the inquiry section on your website. Do respond to inquiries as soon as you can as this will uplift the credibility of your brand. Along with that make sure Search Engine Optimisation and Search Engine Marketing for your page/website is up to mark. As they say, optimizing the page is better than being lost somewhere amidst millions of similar searches.</p>
+<ol start="5">
+<li>Get referrals from your clients:</li>
+</ol>
+<p>Referrals provide authenticity to your work. Word of mouth is better than any other form of marketing. Use it as an advantage and get credibility for your work. Effective relationships are built over a period of time. They not only enable you to reach out to your potential clients, but also motivate you to perform better. Do not hesitate to get testimonials from clients you&#8217;ve delivered great service to!</p>
+<p>Using these strategies will prove beneficial for kick-starting your freelancing career. If you are ready and confident about your freelancing skills, it&#8217;s time to implement these strategies in reality!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs">
+                    <aside class="blog-read" style="position: static;">
+                        <div class="photo-card popular-post">
+                            <div class="content-hold">
+                                <h3>
+                                    You can also read
+                                </h3>
+                            </div>
+                            <div id="blog-sections">
+                            
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</div>
+
+
+
+
+
+
+<script>
+var scroll_top;
+ jQuery(document).on('scroll', function () {
+        if(!jQuery("#main-content").length){
+            return false;
+        }
+        if ((jQuery(document).scrollTop() >= (jQuery("#main-content").offset().top - 100))) {
+            jQuery('.blog-read').css('position', 'fixed');
+        } else {
+            jQuery('.blog-read').css('position', 'static');
+        }
+
+  
+            scroll_top = jQuery(document).scrollTop();
+            if ((scroll_top >= (jQuery('#heading4').offset().top - 100))) {
+                
+                if(window.location.href != jQuery('#heading4').data('url')){
+                    window.history.pushState({}, jQuery('#heading4').data('title'), jQuery('#heading4').data('url'));
+                    jQuery('title').text(jQuery('#heading4').data('title'));
+                }
+                
+            }else if((scroll_top >= (jQuery('#heading3').offset().top - 100))){
+
+                if(window.location.href != jQuery('#heading3').data('url')){
+                    window.history.pushState({},jQuery('#heading3').data('title'), jQuery('#heading3').data('url'));
+                        jQuery('title').text(jQuery('#heading3').data('title'));
+                }
+
+            }else if((scroll_top >= (jQuery('#heading2').offset().top - 100))){
+
+                if(window.location.href != jQuery('#heading2').data('url')){
+                    window.history.pushState({},jQuery('#heading2').data('title'), jQuery('#heading2').data('url'));
+                        jQuery('title').text(jQuery('#heading2').data('title'));
+                }
+
+            }else if((scroll_top >= (jQuery('#heading1').offset().top - 100))) {
+
+                if(window.location.href != jQuery('#heading1').data('url')){
+                    window.history.pushState({},jQuery('#heading1').data('title'), jQuery('#heading1').data('url'));
+                        jQuery('title').text(jQuery('#heading1').data('title'));
+                }
+
+            }
+
+        
+
+
+
+    });
+
+
+
+    function renderBlogScroll() {
+    var cookiesArray = [];
+    var oldurl = 1;
+    var h = [];
+    var historyUrl = '';
+    jQuery('.BlogPost').each(function(i, e) {
+        var url = jQuery(this).data('url'); 
+        var title = jQuery(this).children().find('.blog-title').html(); 
+        jQuery("#blog-sections").append('<div class="content-hold" data-url="'+url+'"><span class="filler"></span><h4>' + title + '</h4></div>');
+      //  alert('appended');
+        cookiesArray.push(title);  
+        h.push('#blog-sections h4:nth-child(' + i + ')');
+    });
+    jQuery(document).on('scroll', function (event) {
+       // alert(jQuery("#heading1").length);
+        if(!jQuery("#heading1").length){
+            return false;
+        }
+        for (var i = 1; i <= cookiesArray.length; i++) {
+            var divheight = (jQuery("#heading" + i).height());
+            if ((jQuery(document).scrollTop() >= (jQuery("#heading" + i).offset().top - 100))) {
+                var percentage = (((jQuery(document).scrollTop() - jQuery("#heading" + i).offset().top + 100) / divheight) * 100);
+                jQuery('#blog-sections .content-hold:nth-child(' + i + ') span').css('height', percentage + '%');
+                jQuery('#blog-sections .content-hold:nth-child(' + i + ')').css('border-left', '3px solid #f5582d');
+                oldurl = i;
+            } else {
+                jQuery('#blog-sections .content-hold:nth-child(' + i + ')').css('border-left', '3px solid #fff');
+            }
+            if ((jQuery(document).scrollTop() >= (jQuery("#heading" + i).offset().top - 100 + jQuery("#heading" + i).height()))) {
+                jQuery('#blog-sections .content-hold:nth-child(' + i + ')').css('border-left', '3px solid #309ebc');
+            }
+        }
+       // history.replaceState(null, null, jQuery("#heading" + oldurl).attr('rel'));
+       /* var sendData = {
+            path: jQuery("#heading" + oldurl).attr('rel')
+        };
+        if (sendData.path != historyUrl) {
+            jQuery.post(BaseUrl + '/api/user/geturltitle', sendData,function(data) {
+                document.title = data.title;
+                document.description = data.desc;
+            }, 'JSON');
+        }*/
+      //  historyUrl = sendData.path;
+    });
+
+    $('#blog-sections > .content-hold').click(function(){
+        var url = $(this).data('url');
+        var top = $('.BlogPost[data-url="'+url+'"]').offset().top;
+        $('html, body').animate({scrollTop: top}, 500);   
+    });
+   
+    jQuery(document).on('scroll', function () {
+        if(!jQuery("#main-content").length){
+            return false;
+        }
+        if ((jQuery(document).scrollTop() >= (jQuery("#main-content").offset().top - 100))) {
+            jQuery('.blog-read').css('position', 'fixed');
+        } else {
+            jQuery('.blog-read').css('position', 'static');
+        }
+    });
+
+
+jQuery(document).ready( function () {
+    $('.hide-from-bots').show();
+});
+    
+
+
+
+}
+ 
+renderBlogScroll();
+//setTimeout(, 3000); 
+</script>
+<style>
+    #blog-sections > .content-hold{
+        cursor: pointer;
+    }
+</style>
+</div>
+<script type='text/javascript' src='https://www.awfis.com/inspiration/wp-content/themes/awfis/js/functions.js?ver=20160717' id='twentythirteen-script-js'></script>
+<script type='text/javascript' src='https://www.awfis.com/inspiration/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+<div class="col-md-12" style="padding:0;">
+<div class="popup" id="uploadpic" style="display: none">
+    <div>{{newUpdatepic}}</div>
+    <input type="file" file-model="myFile" accept="image/x-png,image/gif,image/jpeg" />
+    <button ng-click="uploadFile()">Upload</button>
+</div>
+<div class="popup" id="verify_otp" style="display: none;">
+    <div ng-show="!issuccess">
+        <h3>Verify OTP</h3>
+        <div name="otpjqmsg">{{otpmessage}}</div>
+        <input id="otp" ng-model="otp" placeholder="OTP" type="number">
+        <button class="blue-button" ng-click="verifyOtp()">Verify</button>
+        <div>
+            <br>
+            <a id="resend-the-otp" ng-click="ResendOtp()">Resend OTP</a>
+        </div>
+    </div>
+    <div ng-show="issuccess">
+        <h3>{{otpmessage}}</h3>
+    </div>
+</div>
+<div class="popup" id="verify_email" style="display: none">
+    <div>
+        <h3>Email Sent. Please Click the link in Email to complete Verification.</h3>
+        <h5 class=".alert-success">No Email? Check your spam box.</h5>
+        <div>
+        </div>
+        <div>
+            <br />
+        </div>
+    </div>
+</div>
+
+<!-- <div class="popup" id="verifyemail_action" style="display: none">
+<div style="max-width:50%">
+<div>Please Wait while we verify your identity.</div>
+<img src="/images/horizontalloader.gif" />
+</div>
+</div> -->
+
+<footer ng-controller="LoginController">
+    <div class="footer botfooter">
+        <div class="container txtalignleft ">
+            <div class="row ">
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 footertxt">
+                    <h3>About</h3>
+                    <ul>
+                        <li>
+                            <a href="https://www.awfis.com/about-us" target="_parent" id="about-us-footer">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.awfis.com/contact-us" target="_parent" id="contact-us-footer">
+                                Contact us
+                            </a>
+                        </li>
+                        <li>
+                            <a id="footercareer" target="_self" href="https://www.awfis.com/careers">Careers
+                                <span class="label label-default" style="background: #f3a600">WE ARE HIRING</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.awfis.com/press" target="_parent" id="press-footer">
+                                Press
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.awfis.com/legal-policy" target="_parent" id="legal-footer">
+                                Legal
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.awfis.com/inspiration" target="_parent" id="blog-footer">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="login" ng-click="showRewardPage()" href="javascript:void(0);" id="rewards-footer"> 
+                                Rewards
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.awfis.com/#banner-form" target="_parent" id="request-a-visit-footer">
+                                Request A Visit
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.awfis.com/office-space" target="_parent" id="find-your-space-footer">
+                                Find Your Space
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="https://www.awfis.com/sitemap" target="_parent" id="sitemap-footer">
+                                Sitemap 
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 footertxt">
+                    <h3>Locations</h3>
+                    <ul>
+                        <li>
+                            <a target="_parent" id="location-delhi" href="https://www.awfis.com/office-space/new-delhi">Coworking space in Delhi</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-Bengaluru" href="https://www.awfis.com/office-space/bengaluru">Coworking space in Bengaluru</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-hyderabad" href="https://www.awfis.com/office-space/hyderabad">Coworking space in Hyderabad</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-mumbai" href="https://www.awfis.com/office-space/mumbai">Coworking space in Mumbai</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-gurgaon" href="https://www.awfis.com/office-space/gurgaon">Coworking space in Gurgaon</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-noida" href="https://www.awfis.com/office-space/noida">Coworking space in Noida</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-kolkata" href="https://www.awfis.com/office-space/kolkata">Coworking space in Kolkata</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-pune" href="https://www.awfis.com/office-space/pune">Coworking space in Pune</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-pune" href="https://www.awfis.com/office-space/chandigarh">Coworking space in Chandigarh</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-indore" href="https://www.awfis.com/office-space/indore">Coworking Space in Indore</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-chennai" href="https://www.awfis.com/office-space/chennai" target="_parent" >Coworking space in Chennai</a>
+                        </li>
+                        <li>
+                            <a target="_parent" id="location-ahmedabad" href="https://www.awfis.com/office-space/ahmedabad" target="_parent" >Coworking space in Ahmedabad</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 footertxt">
+                    <h3>Products</h3>
+                    <ul>
+                        <li>
+                            <a id="cabins-footer"  href="https://shop.awfis.com?utm_source=awfis_website&utm_medium=link&utm_campaign=footer" target="_blank">Awfis Shop</a>
+                            <!-- <form ng-if="redirectToken!=undefined" action="https://store.awfis.com/customer/account/loginPost" method="POST" target="_blank">
+                                <input name="token" type="hidden" value="{{redirectToken}}"> 
+                                <button class="awfisbtn "name="Submit" type="submit">
+                                    Awfis@home
+                                </button>
+                            </form> -->
+                        </li>
+                        <li>
+                            <a id="cabins-footer" href="https://www.awfis.com/office-space/allcity/alllocation/cabin" target="_parent">Cabins</a>
+                        </li>
+                        <li>
+                            <a id="cabins-meeting-rooms" href="https://www.awfis.com/office-space/allcity/alllocation/meeting/" target="_parent">Meeting Rooms</a>
+                        </li>
+                        <li>
+                            <a id="cabins-flexible-seats" href="https://www.awfis.com/office-space/allcity/alllocation/flexible-office" target="_parent">Flexible Seats</a>
+                        </li>
+                        <li>
+                            <a id="cabins-fixed-seats" href="https://www.awfis.com/office-space/allcity/alllocation/fixed" target="_parent">Fixed Seats</a>
+                        </li>
+                        <li>
+                            <a id="cabins-bulk-meeting" href="https://www.awfis.com/awfis-now" target="_parent">Meet Now</a>
+                        </li>
+                        <li>
+                            <a id="cabins-national-pass" href="https://www.awfis.com/remote-working" target="_parent">Virtual Offices Plus</a>
+                        </li>
+                        <li>
+                            <a id="cabins-virtual-offices" href="https://www.awfis.com/remote-working" target="_parent">Virtual Offices</a>
+                        </li>
+                        <li>
+                            <a id="cabins-awfis-roaming" href="https://www.awfis.com/awfis-now" target="_parent">Work Now</a>
+                        </li>
+                        <li>
+                            <a id="cabins-mobility-solutions" href="https://www.awfis.com/remote-working" target="_parent">Remote Working</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 footertxtsn ">
+                    <ul>
+                        <li>
+                            <a tabindex="-1" id="download-app-appstore" href="https://itunes.apple.com/in/app/awfis-pro-working-centres/id1027252650?mt=8 "
+                               target="_blank">
+                                <img alt="Get it on App store" src="https://www.awfis.com/images/app-store.png">
+                            </a>
+                        </li>  
+                    </ul>
+                    <ul>
+                        <li>
+                            <a id="download-app-playstore" href="https://play.google.com/store/apps/details?id=com.awfis.mobile" target="_blank">
+                                <img alt="Get it on playstore" src="https://www.awfis.com/images/play-store.png">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="socialicon">
+                        <li>
+                            <a id="social-link-fb" href="https://www.facebook.com/myawfis/" target="_blank">
+                                <img alt="facebook" src="https://www.awfis.com/images/fb.png">
+                            </a>
+                        </li>
+                        <li id="social-link-instagram" class="paddingleft" style="padding: 0 0px 0 8px;">
+                            <a  href="https://www.instagram.com/myawfis/" target="_blank">
+                                <img alt="instagram" src="https://www.awfis.com/images/insta.png">
+                            </a>
+                        </li>
+                        <li id="social-link-twitter" class="paddingRight" style="padding: 0 8px 0 8px;">
+                            <a href="https://twitter.com/myawfis" target="_blank">
+                                <img alt="Twitter" src="https://www.awfis.com/images/twitter.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a id="social-link-linkedin" href="https://www.linkedin.com/company/awfis" target="_blank">
+                                <img alt="LinkedIn" src="https://www.awfis.com/images/linkedin.png">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.footer-->
+
+    <div class="footer-bottom ng-scope">
+        <div class="container">
+            <p class="copyright "> © Awfis Space Solutions Pvt Ltd </p>
+        </div>
+        <!-- Start of LiveChat (www.livechatinc.com) code -->
+        <div class="popup" id="login" style="display: none">
+            <div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form id="loginfrom" name="loginfrom" method="post" ng-submit="userLoggedin(loginfrom)">
+                            <div class="width70p-m-auto">
+                                <h3>Login</h3>
+                                <h5 class=".alert-error">{{loginerror}}</h5>
+                                <div id="testloginerrormessage" ng-bind-html="loginData.message"></div>
+                                <input class="login-marginmob" autofocus tabindex="1" name="email" ng-model="email" placeholder="E-mail" type="email" required=""
+                                       id="loginemail" />
+                                <span class="help-inline alert-warning" ng-show="submitted && loginfrom.email.$error.required" style="float:left;">Email ID is required field</span>
+                                <span class="help-inline alert-warning" ng-show="submitted && loginfrom.email.$error.email" style="float:left;">Invalid email ID</span>
+                                <input class="login-marginmob" autocomplete="off" tabindex="2" name="password" ng-model="password" placeholder="Password"
+                                       type="password" required="" />
+                                <span class="help-inline alert-warning" ng-show="submitted && loginfrom.password.$error.required" style="float:left;">Password is required field</span>
+                                <ul class="login-marginmob">
+                                    <li>
+                                        <input id="c1" name="cc" type="checkbox" />
+                                        <label for="c1">
+                                            <span></span>Remember me</label>
+                                    </li>
+                                    <li>
+                                        <button class="blue-button" type="submit">Login</button>
+                                    </li>
+                                </ul>
+                                <p class="">
+                                    <a href="" id="forget">Forgot your password?</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <!-- <a href="javascript:showPhoneOTP();">Resend OTP?</a> -->
+                                </p>
+                                <ul class="login-marginmob">
+                                    <li>
+                                        <a class="white-button" id="open-signup">Sign up with Email</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--          <div class="row">
+                          <div class="col-md-7 cols loginpad0">
+                            <div class="padding-tb-70 margin-0">
+                              <a class="social-btns facebook" href="javascript:void(0);" ng-click="socialLogin('fb');">Continue with Facebook</a>
+                              <a class="social-btns linkedin" href="javascript:void(0);" ng-click="socialLogin('lin');">Continue with Linkedin</a>
+                              <a class="social-btns google" href="javascript:void(0);" ng-click="socialLogin('goo');">Continue with google</a>
+                              <p class="border"><span>OR</span></p>
+                              <a class="white-button" id="open-signup">Sign up with Email</a>
+                            </div>
+                          </div>
+                          <div class="col-md-5 cols loginpad0">
+                            <div class="padding-tb-70 margin-0">
+                              <div class="padding-lr-30">
+                                  <form id="loginfrom" name="loginfrom" method="post" ng-submit="userLoggedin(loginfrom)">
+                                      <div class="width70p-m-auto">
+                                  <h3>Login</h3>
+                                  <h5 class=".alert-error">{{loginerror}}</h5>
+                                  <div id="testloginerrormessage" ng-bind-html="loginData.message"></div>
+                                  <input class="login-marginmob" autofocus tabindex="1" name="email" ng-model="email" placeholder="E-mail" type="email" required="" id="loginemail"/>
+                                  <span class="help-inline alert-warning" ng-show="submitted && loginfrom.email.$error.required" style="float:left;">Email ID is required field</span>
+                                  <span class="help-inline alert-warning" ng-show="submitted && loginfrom.email.$error.email" style="float:left;">Invalid email ID</span>
+                                  <input class="login-marginmob" autocomplete="off" tabindex="2" name="password" ng-model="password" placeholder="Password" type="password" required="" />
+                                  <span class="help-inline alert-warning" ng-show="submitted && loginfrom.password.$error.required" style="float:left;">Password is required field</span>
+                                  <ul class="login-marginmob">
+                                      <li><input id="c1" name="cc" type="checkbox" />
+                                      <label for="c1"><span></span>Remember me</label>
+                                      </li>
+                                      <li><button class="blue-button" type="submit">Login</button></li>
+                                    </ul>
+                                      <p class="">
+                                          <a href="" id="forget">Forgot your password?</a>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:showPhoneOTP();">Resend OTP?</a>
+                                      </p>
+                                   </div>
+                                 </form>
+                              </div>
+                            </div>
+                          </div>
+                          </div>-->
+            </div>
+        </div>
+
+
+        <div class="popup" id="verify_phoneotp" style="display: none">
+            <div>
+                <h3>Enter Phone number</h3>
+                <div>{{phoneotpMessage}}</div>
+                <input id="phoneotp" ng-model="phoneotp" placeholder="Mobile" type="text" />
+                <button class="blue-button" ng-click="verifyPhoneOtp()">Verify</button>
+                <div></div>
+            </div>
+
+            <div class="popup" id="forget_password" style="display: none">
+                <div>
+                    <h3>Forget Password</h3>
+                    <h5 class=".alert-success">{{message}}</h5>
+                    <h5 class=".alert-error">{{error}}</h5>
+                </div>
+                <input placeholder="Email" type="email" ng-model="reset_email" />
+                <p></p>
+                <p class="forgot">
+                    <a class="blue-button" ng-click="resetPassEmail()">Reset</a>
+                </p>
+            </div>
+            <div class="popup" id="verify-email" style="display: none" ng-init="VerifyEmail()">
+                <div>
+                    <h3>Email Verified Successfully</h3>
+                    <h5 class=".alert-success">{{verifyemail}}</h5>
+                    
+                </div>
+            </div>
+            <div class="popup" id="verify" style="display: none" ng-init="VerifyCalculator()">
+                <div>
+                   
+                    <h5 class=".alert-success">{{verifycalculator}}</h5>
+                    
+                </div>
+            </div>
+
+            <div class="popup" id="sign_up" style="display: none">
+                <form id="regfrom" name="regfrom" method="post" ng-submit="userSignup(regfrom)">
+                    <div>
+                        <h3 class="registermarginbot">Sign up</h3>
+                        <h5 class="error">{{signuperror}}</h5>
+                        <h5 class="">{{signupmessage}}</h5>
+                        <div class="registermarginbot"></div>
+                        <input class="form-control registermarginbot" id="ID_name" ng-model="name" placeholder="Name" type="text" />
+
+                        <input class="registermarginbot" id="ID_lmobile" ng-model="mobile" maxlength="10" minlength="10" placeholder="Mobile" type="text"
+                               />
+
+                        <input class="registermarginbot" id="ID_email" ng-model="email" placeholder="Email" type="email" required="" />
+
+                        <input class="registermarginbot" autocomplete="off" ng-model="password" id="password" placeholder="Password" type="password"
+                               />
+                        <input class="registermarginbot" autocomplete="off" ng-model="cnfpassword" id="cnfpassword" placeholder="Confirm Password"
+                               type="password" />
+
+                        <input id="acceptedTerms" ng-model="acceptedTerms" type="checkbox" name="acceptedTerms" value="true" />
+                        <label for="acceptedTerms" class="mpadbot0">
+                            <span></span>
+                        </label>
+                        I agree to
+                        <a target="_blank" href="/legal-policy">User Agreement</a> and
+                        <a target="_blank" href="/legal-policy">Guest policy</a>
+                        <button ng-disabled="signupdisabled"class="blue-button registermarginbot mobtop10" type="submit">Register</button>
+                        <p class="forgot registermarginbot mobtop10">
+                            <a class="" id="open-login">Already have an account?</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="popup" id="agreementpop" style="display: none">
+                <div>
+                    <h4>
+                        <input id="termscondition" ng-Click="setCondition();" ng-checked="chck" type="checkbox" ng-model="termsconditionagree" />
+                        <label for="termscondition">
+                            <span></span>
+                            I accept terms and conditions of
+                            <a target="_blank" href="https://www.awfis.com/awfis-user-agreement">User Agreement</a> and
+                            <a target="_blank" href="https://www.awfis.com/guest-and-visitor-policy/">Guest and visitor policy</a>
+                        </label>
+                    </h4>
+                    <p ng-show="true">
+                        <button fb-login="" ng-show="facebookButton" ng-class="{'disable': disble}" ng-disabled="disble" class="blue-button">I Agree</button>
+                        <button linked-in="" ng-show="linkedButton" ng-class="{'disable': disble1}" ng-disabled="disble1" class="blue-button">I Agree</button>
+                        <button g-login="" ng-show="googleButton" ng-class="{'disable': disble2}" ng-disabled="disble2" class="blue-button">I Agree</button>
+                    </p>
+                </div>
+            </div>
+
+            <div class="popup" id="problemID" style="display:none">
+                <div>
+                    <h4>Are you facing any issue or need assistance, please Contact our Support Team</h4>
+                    <p ng-show="true">
+                        <button class="blue-button" ng-click="sendToContact()">Yes</button>
+                        <button class="blue-button" ng-click="closeBox()">No</button>
+                    </p>
+                </div>
+            </div>
+
+            <div class="popup" id="reset-password" style="display: none">
+                <div>
+                    <div class="row">
+                        <div class="cols">
+                            <div>
+                                <div ng-show="!resetload">
+                                    <h3>Reset Password</h3>
+                                    <div ng-bind-html="resetMessage"></div>
+                                    <input name="password" ng-model="reset.password" placeholder="Password" type="password" />
+                                    <input name="re password" ng-model="reset.re_password" placeholder="Confirm Password" type="password" />
+                                    <a href="" ng-click="resetPassword()">Reset Password</a>
+                                </div>
+                                <div ng-show="resetload" class="reset-loader" >
+                                    <p>Password reset is done successfully</p>
+                                    <p>You will be redirected to Awfis store to login.</p>
+                                    <div class="loadersmall"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!--Office Space Page Controller Start-->
+            <script src="https://www.awfis.com/js/angular/controllers/OfficeSearchCtrl.1571140461.js"></script>
+            <script src="https://www.awfis.com/js/angular/controllers/OfficeDetailsCtrl.1603970229.js"></script>
+
+            <!--Office Space Page Controller Ended-->
+
+            <!--Request Form-->
+            <script src="https://www.awfis.com/js/angular/controllers/RequestFormCtrl.1610977018.js"></script>
+            <script src="https://www.awfis.com/js/angular/controllers/ContactCtrl.1555065199.js"></script>
+            <script src="https://www.awfis.com/js/angular/controllers/VirtualOfficeCtrl.1555065199.js"></script>
+            <script src="https://www.awfis.com/js/owl.carousel.min.1555065199.js?ver=3.1.3"></script>  
+            <!--moved from header-->
+            <script src="https://www.awfis.com/js/angular/controllers/LoginCtrl.1631775851.js"></script>
+            <script src="https://www.awfis.com/js/angular/controllers/CommonCtrl.1600335988.js"></script> 
+            <script src="https://www.awfis.com/js/jquery.fancybox.1555065199.js"></script> 
+            <script src="https://www.awfis.com/js/angular/angular-directive.1625288360.js"></script>
+            <script src="https://www.awfis.com/js/angular/angular-service.1631775851.js"></script>            
+            
+            <script>
+                                                //Google GA Addition
+                                                function getValuesForGA(act, action, type) {
+                                                    var label = '';
+                                                    if (type == 'VO') {
+                                                        label = document.getElementById('cityIDVO').options[document.getElementById('cityIDVO').selectedIndex].text + ' - ' + document.getElementById('centerIDVO').options[document.getElementById('centerIDVO').selectedIndex].text;
+                                                    }
+                                                    if (type == 'COUPON') {
+                                                        label = document.getElementById('hiddenSpaceID').value + ' - ' + document.getElementById('testapplycoupon').value;
+                                                    }
+                                                    if (type == 'PAY') {
+                                                        label = 'Wallet - ' + document.getElementById('hiddenWalletID').value + ' NetBanking - ' + document.getElementById('hiddenBankingID').value;
+                                                    }
+                                                    setGA(act, action, label);
+                                                }
+                                                function setGA(act, action, label) {
+                                                    ga('send', 'event', act, action, label);
+                                                }
+
+            </script>
+
+            <!-- End of LiveChat code -->
+        </div>
+        <script>
+                    var getUrlParameter = function getUrlParameter(sParam) {
+                        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                            sURLVariables = sPageURL.split('&'),
+                            sParameterName,
+                            i;
+                        for (i = 0; i < sURLVariables.length; i++) {
+                            sParameterName = sURLVariables[i].split('=');
+                            if (sParameterName[0] === sParam) {
+                                return sParameterName[1] === undefined ? true : sParameterName[1];
+                            }
+                        }
+                    };
+                    function showOTP() {
+                        $.fancybox.close();
+                        $('.fancybox-overlay').hide();
+                        $.fancybox.open({
+                            href: '#verify_otp'
+                        });
+                    }
+                    function showPhoneOTP() {
+                        $.fancybox.close();
+                        $('.fancybox-overlay').hide();
+                        $.fancybox.open({
+                            href: '#verify_phoneotp'
+                        });
+                    }
+                    function showEmail() {
+                        $.fancybox.close();
+                        $('.fancybox-overlay').hide();
+                        $.fancybox.open({
+                            href: '#verify_email'
+                        });
+                    }
+                    function requestVisit() {
+                        $.fancybox.close();
+                        $('.fancybox-overlay').hide();
+                        $.fancybox.open({
+                            href: '#visit-request'
+                        });
+                    }
+                    function openSignupPopup() {
+                        $("#regfrom").find(":submit").attr("disabled",false);
+                        $.fancybox.close();
+                        $('.fancybox-overlay').hide();
+                        $.fancybox.open({
+                            href: '#sign_up',
+                            closeClick: false
+                        });
+                    }
+                    function downloadReqlink() {
+                        $('button[aria-expanded="true"]').trigger('click');
+                        $('html,body').animate({
+                            scrollTop: $('.footertxtsn').offset().top
+                        }, 1000);
+                        setGA('Header Links', 'Click', 'Download App');
+                    }
+                    function showLogin() {
+                        $.fancybox.close();
+                        $('.fancybox-overlay').hide();
+                        $.fancybox.open({
+                            href: '#login',
+                            afterShow: function () {
+                                var height = $('.cols:first-child').height();
+                                $('.cols:last-child').css('height', height);
+                            }
+                        });
+                        setGA('Header Links', 'Click', 'Log in');
+                    }
+                    function showCreditPremium() {
+                        $.fancybox.close();
+                        $('.fancybox-overlay').hide();
+                        $.fancybox.open({
+                            href: '#creditpremiumpop',
+                            afterShow: function () {
+                                var height = $('.cols:first-child').height();
+                                $('.cols:last-child').css('height', height);
+                            }
+                        });
+                    }
+                   
+                    $(document).ready(function () {
+                        var value = getUrlParameter('action');
+                        var value2 = getUrlParameter('code');
+                       
+                        if (value2!=undefined) {
+                            $.fancybox.close();
+                            $('.fancybox-overlay').hide();
+                            $.fancybox.open({
+                                href: '#verify'
+                            });
+                        }
+                        
+                        if (value == 'reset-password') {
+                            $.fancybox.close();
+                            $('.fancybox-overlay').hide();
+                            $.fancybox.open({
+                                href: '#reset-password',
+                                afterClose: function() {
+                                   
+                              
+                                   var value2 = getUrlParameter('redirection');
+                                   if( value2 !=undefined && value2!=""){
+                                       
+                                           window.location.href = value2;
+                                       
+                                   }
+                               
+                                  
+                               }
+                            });
+                        }
+                        
+                        if (value == 'verify-email') {
+                            $.fancybox.close();
+                            $('.fancybox-overlay').hide();
+                            $.fancybox.open({
+                                href: '#verify-email'
+                            });
+                        }
+                        if (value == 'rating') {
+                            $.fancybox.close();
+                            $('.fancybox-overlay').hide();
+                            $.fancybox.open({
+                                href: '#ratingpopup'
+                            });
+                        }
+                        
+                        
+                        $("#printbtn").click(function () {
+                            $('embed html').addClass('dd');
+                            $('paper-icon-button#print').click();
+                        });
+                        $('#open-login').click(function () {
+                            $.fancybox.close();
+                            $('.fancybox-overlay').hide();
+                            $.fancybox.open({
+                                href: '#login',
+                                afterShow: function () {
+                                    var height = $('.cols:first-child').height();
+                                    $('.cols:last-child').css('height', height);
+                                }
+                            });
+                        });
+
+                        $('#open-signup').click(function () {
+                            $.fancybox.close();
+                            $('.fancybox-overlay').hide();
+                            $.fancybox.open({
+                                href: '#sign_up',
+                                closeClick: false
+                            });
+                            setGA('Header Links', 'Click', 'Sign up');
+                        });
+
+
+
+
+
+                        $('#forget').click(function () {
+                            $.fancybox.close();
+                            $('.fancybox-overlay').hide();
+                            $.fancybox.open({
+
+                                href: '#forget_password',
+                            });
+                        });
+                    });
+                
+
+                    $('.userWishlist .removeFromList').click(function (e) { });
+
+                    $('.userCart .removeFromList').click(function (e) {
+                        if ($('.userCart li').length <= 3) {
+                            $('.userCart').append('<li style="text-align:center;">Sorry !! No Data</li>');
+                            $('.userCart').append('<li class="undo"><h5 class="color-lightgrey">Item removed <a href="" class="white-button">Undo</a></h5></li>');
+                        }
+                        $(this).parents('.dropdown-menu li').remove();
+                        if (!$('.userCart li').hasClass('undo')) {
+                            $('.userCart').append('<li class="undo"><h5 class="color-lightgrey">Item removed <a href="" class="white-button">Undo</a></h5></li>');
+                        }
+                        setInterval(function () {
+                            $('.userCart .undo').remove();
+                        }, 3000);
+                        e.stopPropagation();
+                    });
+                    $(document).ready(function () {
+                        $('.arrowkeys').click(function () {
+                            $(this).toggleClass('isOpen');
+                        });
+                    });
+                    function limit(element, max) {
+                        var max_chars = max;
+                        if (element.value.length > max_chars) {
+                            element.value = element.value.substr(0, max_chars);
+                        }
+                        if (element.value.length == 10) {
+                            $('#sign_up #mobile').removeClass('ng-invalid').addClass('ng-valid').removeClass('ng-invalid-maxlength').addClass('ng-valid-maxlength');
+                        }
+                    }
+
+
+
+
+                    $(function () {
+
+                        if (window.location.hash) {
+                            var type = window.location.hash.substr(1);
+                            if (type == 'banner-form') {
+                                $('html').animate({
+                                    scrollTop: $('#banner-form').offset().top - 80
+                                }, 1000);
+                            }
+                        }
+
+                    });
+        </script>
+        <style class="ng-scope">
+            footer {
+                background: #f4f6fa;
+            }
+
+
+            footer ul li {
+                display: inherit;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                white-space: nowrap;
+
+            }
+
+            .social li {
+                display: table-cell;
+            }
+
+            .txtLeft {
+                text-align: left;
+            }
+
+            .paddingleftRight {
+                padding: 0 37px 0 38px;
+            }
+
+            footer ul li a {
+                font-family: sfui-semi-bold;
+                font-size: 14px;
+                color: #808080;
+            }
+
+            .socialicon {
+
+                display: inline-block;
+            }
+
+            @media (min-width: 1200px) {
+                .txtalignleft {
+                    text-align: left;
+                }
+            }
+        </style>
+        
+                    <script type="text/javascript" >
+                    setTimeout(function(){ 
+                        /* <![CDATA[ */
+                        var google_conversion_id = 880913412;
+                        var google_custom_params = window.google_tag_params;
+                        var google_remarketing_only = true;
+                        var google_conversion_format = 3;
+                        /* ]]> */
+                    }, 4000);
+            </script>
+            <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js" async defer></script>
+            <noscript>
+            <div style="display:inline;">
+                <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/880913412/?value=0&amp;guid=ON&amp;script=0"
+                     />
+            </div>
+            </noscript>
+            <script>
+                 setTimeout(function(){ 
+                        (function (i, s, o, g, r, a, m) {
+                            i['GoogleAnalyticsObject'] = r;
+                            i[r] = i[r] || function () {
+                                (i[r].q = i[r].q || []).push(arguments)
+                            }, i[r].l = 1 * new Date();
+                            a = s.createElement(o),
+                                m = s.getElementsByTagName(o)[0];
+                            a.async = 1;
+                            a.src = g;
+                            m.parentNode.insertBefore(a, m)
+                        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                        ga('create', 'UA-66442063-1', 'auto');
+                    }, 4000);
+            </script>
+                    <script type="text/javascript">
+                setTimeout(function(){ 
+                    window.onload = function () {
+                        var hostname = window.location.protocol + "//" + window.location.hostname + "/";
+                        var au = window.location.href + '?';
+                        var aurl = au.substring(0, au.indexOf('?'));
+                        aurl = aurl.replace(hostname, '');
+                        window.scrollTo(0, 0);
+                        ga('send', 'pageview', aurl);
+                    };
+                }, 4000);
+        </script>
+
+        <input type="hidden" id="logmeout" ng-click="logout()" />
+</footer>
+<style>
+    .content-side-area {
+        padding-right: 20px;
+    }
+</style>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4262ecdced","applicationID":"211426920","transactionName":"NQADZ0NVWkQCUUJdDQxKIFBFXVtZTEFfWgUOAA==","queueTime":0,"applicationTime":614,"atts":"GUcAEQtPSUo=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html></div>
+
+
+<style class="ng-scope">
+footer{
+	background: #f4f6fa;
+}
+
+
+footer ul li {
+	display: inherit;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	white-space: nowrap;
+
+}
+
+.social li{ display: table-cell;}
+
+.txtLeft{text-align: left;}
+.paddingleftRight{ padding: 0 37px 0 38px;}
+
+footer ul li a {
+	font-family: sfui-semi-bold;
+	font-size: 14px;
+	color: #808080;
+}
+
+.socialicon{
+
+	display: inline-block;
+}
+
+@media (min-width: 1200px){
+	.txtalignleft {
+		text-align: left;
+	}
+}
+
+</style>
